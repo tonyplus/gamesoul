@@ -1,0 +1,48 @@
+﻿{
+  "MirsStyleTheming": {
+    "RootBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "NavBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "WorkBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "WorkTitleBarBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "MdiBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "ChildWindowBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#354052"
+    },
+    "ThemeFileName": "Default",
+    "ThemeTitle": "默认也是 一种选择"
+  }
+}

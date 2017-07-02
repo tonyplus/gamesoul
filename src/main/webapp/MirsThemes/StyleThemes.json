@@ -1,0 +1,22 @@
+﻿{
+  "MirsStyleThemeList": {
+    "MirsStyleTheming": [
+	  {
+        "ThemeFileName": "Default",
+        "ThemeTitle": "默认也是一种选择"
+      },
+	  {
+        "ThemeFileName": "Landscape",
+        "ThemeTitle": "深蓝风景"
+      },
+	  {
+        "ThemeFileName": "Hot",
+        "ThemeTitle": "热力无限"
+      },
+	  {
+        "ThemeFileName": "GreenEyeProtection",
+        "ThemeTitle": "绿野仙踪"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastwork.module.system.dao.LkRolePrivMapper" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="com.fastwork.module.system.entity.LkRolePriv" >
+	<result column="conid" property="conid" jdbcType="VARCHAR" />
+	<result column="roleid" property="roleid" jdbcType="VARCHAR" />
+	<result column="privid" property="privid" jdbcType="VARCHAR" />
+</resultMap>
+       
+<!-- lk_role_priv table all fields -->
+<sql id="Base_Column_List" >
+	 conid,roleid,privid
+</sql>
+   
+</mapper>   

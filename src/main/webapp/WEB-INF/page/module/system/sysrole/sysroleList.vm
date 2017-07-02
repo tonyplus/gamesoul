@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>角色管理</title>
+	#include_css(["bootstrap","font","jqgrid","jqueryui","main","layer"])
+	#include_html5()
+</head>
+<body>
+	<div class="container-fluid pcheck margin10">
+    	<div class="row">
+    		<div class="col-sm-12">
+    			<form>
+    				<div class="row">
+    					<div class="col-sm-2" style="padding:3px 20px;">
+							<input class="form-control formWidth" type="text" name="rolename" id="rolename" placeholder="角色名">
+    					</div>
+    					<div class="col-sm-2" style="padding:3px 20px;">
+    						<button type="button" class="search" id="searchBtn" style="width:100%;height:28px;">查询</button>
+    					</div>
+    					<div class="col-sm-2" style="padding:3px 20px;">
+    						<button type="button" class="search" id="resetBtn" style="width:100%;height:28px;">重置</button>
+    					</div>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+
+	#*
+	<div class="pcheck borderBtm margin10 sbox">
+		<form class="form-inline  pd6">
+    		<div class="form-left">
+        		<div class="col-in">
+    				<div class="lbl" >角色名</div>
+    				<input class="form-control formWidth" type="text" name="rolename" id="rolename"> 
+        		</div>
+        	    <div class="col-in">
+        			<button type="button" class="search" id="searchbtn">查询</button>
+        			<button type="reset" class="search" id="resetbtn"><span>重置</span></button>		    	
+        	    </div>
+    		</div>
+        </form>
+	</div>
+	*#
+	
+	<div class="table-line">
+		#displayOper($privcode)
+        <table id="grid-table"></table>
+        <div id="grid-pager"></div>
+	</div>
+  
+#include_js(["jquery","bootstrap","jqgrid","jqueryui","shrink","layer","dateutil","select_option"])
+<script src="${rc.contextPath}/js/module/system/sysrole/sysroleList.js"></script>
+
+</body>
+</html>

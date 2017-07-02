@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>#sys_title()</title>
+	#include_css(["bootstrap"])
+    <link href="${rc.contextPath}/css/common/login.css"  rel="stylesheet" type="text/css" />
+	#include_html5()
+</head>
+<body>
+	<header>
+    	<div class="lgnTop">
+    		<div class="lgnLogo"></div>
+    		<div class="lgnr">
+    			<a href="#">最新资讯</a>
+    			<a id="operationManual" href="javascript:void(0)">操作手册</a>
+    		</div>
+    	</div>
+	</header>
+	<section>
+		<div class="lgnContent">
+			<div class="content">
+				<!-- <p class="tip">企业基础信息数据采集系统</p> -->
+    			<div class="lngFrm">
+    				<div class="tab_menu">
+    					<ul>
+    						<li class="selected">政府用户</li>
+    						<li>企业用户</li>
+    					</ul>
+    				</div>
+    				<div class="tab_box">
+    					<div id="govdiv">
+    						<p><input id="govusername" name="govusername" class="ipt" type="text" placeholder="请输入您的用户名" value=""></p>
+    						<p><input id="govpassword" name="govpassword" class="ipt" type="password" placeholder="请输入您的密码" value=""></p>
+							<span id="govmsg" style="color:red;"></span>
+    						<p><input type="checkbox">自动登录<a href="#">忘记密码？</a></p>
+    						<p>
+    							<button class="lgnBtn" onclick="govlogin();"></button>	
+    							<button class="regBtn" onclick="register();"></button>
+    						</p>
+    					</div>
+    					<div id="entdiv" style="display: none;">
+    						<p><input id="entusername" name="entusername" class="ipt" type="text" placeholder="请输入您的用户名" value=""></p>
+    						<p><input id="entpassword" name="entpassword" class="ipt" type="password" placeholder="请输入您的密码" value=""></p>
+    						<span id="entmsg" style="color:red;"></span>
+    						<p><input type="checkbox">自动登录<a href="#">忘记密码？</a></p>
+    						<p>
+    							<button class="lgnBtn" onclick="entlogin();"></button>	
+    							<button class="regBtn" onclick="register();"></button>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+            </div>
+		</div>
+	</section>
+	<footer>
+		<div class="foot">
+            <div class="footer"><span>#sys_company()</span><span>客服热线：#sys_company_tel()</span></div>
+            <div class="footer"><span>友情提示:建议您使用IE10.0以上版本浏览器</span></div>
+        </div>
+	</footer>
+</body>
+
+#include_js(["jquery","bootstrap","dialog","layer"])
+<script type="text/javascript">
+//指定光标位置
+$("input[id='govusername']:first").focus();
+$(function() {
+	var lgnContent =$(window).height() - $('.lgnTop').height() - $('.foot').height()-19;
+	$('.lgnContent').css('height',lgnContent)
+	$(window).resize(function() {
+	var lgnContent =$(window).height() - $('.lgnTop').height() - $('.foot').height()-19;
+	$('.lgnContent').css('height',lgnContent)
+	});
+	$('.tab_menu ul li').click(function() {
+	$(this).addClass("selected").siblings().removeClass("selected");
+	var index =  $('.tab_menu ul li').index(this);
+	$("div.tab_box > div").eq(index).show().siblings().hide();
+	});
+});
+//解决iframe session失效调整登陆界面
+if (window != top){
+   top.location.href = location.href; 
+} 
+
+//登录的时候回车键触发事件
+$(document).keydown(function(event) { 
+	if (event.keyCode == 13) { 
+		//判断企业div是否可见
+		if($("#entdiv").is(":visible")){
+			entlogin();
+		}else{
+			govlogin();
+		}
+        event.returnValue = false;
+	} 
+}); 
+
+function govlogin(){
+	var username=$('#govusername').val();
+	var password=$('#govpassword').val();
+	if(username.length==0||password.length==0){
+		$('#govmsg').html('用户名或密码不能为空！'); 
+		return;
+	}
+	$.ajax( {    
+        url:'${rc.contextPath}/login/validate',    
+        data:{    
+             username: username,    
+             password : password,
+			 usertype : 'GOV'
+        },    
+        type:'post',    
+        cache:false,    
+        dataType:'json',    
+        success:function(data) {  
+            if(data.success =="true" ){    
+                window.location="${rc.contextPath}/last";
+            }else{    
+			    $('#govmsg').html(data.msg); 
+				$('#govpassword').val("")
+            }    
+         },    
+         error : function() { 
+		 	  $('#govmsg').html('用户名或密码不能为空！'); 
+         }    
+      }); 
+}
+
+function entlogin(){
+	var username=$('#entusername').val();
+	var password=$('#entpassword').val();
+	if(username.length==0||password.length==0){
+		$('#entmsg').html("用户名或密码不能为空！"); 
+		return;
+	}
+	$.ajax( {    
+        url:'${rc.contextPath}/login/validate',    
+        data:{    
+             username: username,    
+             password : password,
+			 usertype : 'ENT'
+        },    
+        type:'post',    
+        cache:false,    
+        dataType:'json',    
+        success:function(data) {  
+            if(data.success =="true" ){    
+                window.location="${rc.contextPath}/last"
+            }else{    
+			    $('#entmsg').html(data.msg); 
+				$('#entpassword').val("")
+            }    
+         },    
+         error : function() { 
+		 	  $('#entmsg').html('用户名或密码不能为空！'); 
+         }    
+      }); 
+}
+//注册
+function register(){
+	window.open("${rc.contextPath}/login/agreement"); 
+}
+/*
+*弹出待下载文件列表
+*/
+$("#operationManual").on("click",function(){
+	openWin("${rc.contextPath}/login/operationFileList",'操作文档','35%','55%');
+});
+</script>
+</html>

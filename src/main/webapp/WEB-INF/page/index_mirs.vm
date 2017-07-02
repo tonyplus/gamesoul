@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>#sys_title()</title>
+    <link rel="Shortcut Icon" href="images/favicon.ico" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+	#include_css(["bootstrap","jqueryui","jquery","layer","ztree","wtqmain"])
+	#include_html5()
+    <!--css-->
+    <link href="MirsThemes/DefaultSetting.css" rel="stylesheet" />
+	<link id="MirsTheme" href="#" rel="stylesheet" />
+	
+    <!--Mirs js-->
+    <script src="MirsScript/Application.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/RootControl.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/MDIControl.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/NavToolBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/NavListControl.js" type="text/javascript"></script>
+
+    <script src="MirsScript/Navigation/WorkControl.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/WorkTitleBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/NavTitleBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/NavControl.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/ChildWindow.js" type="text/javascript"></script>
+    <script src="MirsScript/ScriptManager.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/DynamicBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/FixedBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/PluginTheme.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/ExtenMenu.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/WinManagerBar.js" type="text/javascript"></script>
+    <script src="MirsScript/Navigation/NavPanelControl.js" type="text/javascript"></script>
+	
+	 
+	#include_js(["jquery","bootstrap","jqueryui","dialog","slimscroll","dateutil","layer","ztree","contabs"])
+	<script src="${rc.contextPath}/js/common/main.js"></script>
+	<script src="${rc.contextPath}/js/common/metisMenu.js"></script>
+	<script type="text/javascript" src="${rc.contextPath}/js/module/index.js"></script>
+<!-- 当前皮肤 -->	
+<input type="hidden" id="theme_current" name="theme_current" value="$!{theme_current}"/>
+<input type="hidden" id="sysorg" name="sysorg" value="$!{SESSION_KEY_OBJ_ORG_BEAN}"/>
+    <!--Project js-->
+	<script src="DevelopmentCase/NavWorkContorlDemo/NavWorkContorlDemo.js" type="text/javascript"></script>
+    <script src="js/common/Default.js" type="text/javascript"></script>
+	<!--主题代理 脚本-->
+	<script src="DevelopmentCase/CustomTheme.js" type="text/javascript"></script>
+	
+	
+
+    <style type="text/css">
+        /*二次开发团队如果有需要，可以修改Mirs 的位置大小等*/
+        .mirsParent {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+
+        //写在这里只是便于看到，二次开发可根据需要自己迁移到 default.js 中
+        window.onload = function () {
+			//假设通过验证录有效
+			#set($str1="{ LoginID: 'demo1', UserName: 'u1XXX', Organization: '开发示例', SmallTicket: '45679686-90DF-42EB-8BDA-BE57F8963A64' }")
+			var userinfo = $str1;
+            //实际真正运行时，开始只有 SmallTicket 即可，其他的是系统从服务端取的；调试方便所以 id、org 等信息就这样写吧。
+            //默认调试用户
+            var authinf = userinfo;
+
+            var defView = new curProject.Default(); //视图类，用于界面和js解耦，以及二次开发自定义这个页面
+            //使用菜单拦截 见上PHP引用标签
+			#set($menus=$session.getAttribute("SESSION_KEY_OBJ_MENU_BEAN"))
+			var navData = $BaseTool.createMirsMenu($menus,${rc.contextPath});			
+			//Mirs启动
+            var mirsApp = window.Mirs.Application.Create(defView, navData);
+			//创建自定义主题代理类
+            mirsApp.ThemeAdapter = window.CurProject.CustomTheme.Create();
+            mirsApp.AuthInfo = authinf;
+            mirsApp.startup();
+        }
+    </script>
+
+</head>
+<body>
+    <div id="mirsParent" class="mirsParent">
+        <!-- 这下面的内容,只是为了研发期调试方便，正式版这里什么都没有，请不要随意更改 -->
+        <div id="mirsRootControl" class="mirsRootPanel">
+        </div>
+    </div>
+#include_js(["jquery","bootstrap","jqueryui","dialog","slimscroll","dateutil","layer","ztree","contabs"])
+</body>
+</html>

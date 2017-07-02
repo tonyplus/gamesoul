@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>mymap</title>
+    <link rel="stylesheet" href="http://jsapi.thinkgis.cn/esri/css/esri.css">
+    <script src="http://jsapi.thinkgis.cn/init.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        var map;
+        var countyLayer;
+        var pictureMarkerSymbol;
+
+        var _Graphic = null;
+        var _Map = null;
+        var _OverviewMap = null;
+        var _Scalebar = null;
+        var _parser = null;
+        var _Graphic = null;
+        var _GraphicsLayer = null;
+        var _Point = null;
+        var _SpatialReference = null;
+        var _PictureMarkerSymbol = null;
+        var _InfoTemplate = null;
+
+        window.onload = function () {
+            require([
+              "esri/map",
+              "esri/dijit/OverviewMap",
+              "esri/dijit/Scalebar",
+              "esri/graphic",
+              "esri/layers/GraphicsLayer",
+              "esri/geometry/Point",
+              "esri/SpatialReference",
+              "esri/symbols/PictureMarkerSymbol",
+              "esri/layers/ArcGISTiledMapServiceLayer",
+			  "esri/layers/FeatureLayer",
+              "esri/InfoTemplate"
+            ], function (
+              Map, OverviewMap, Scalebar, Graphic, GraphicsLayer, Point, SpatialReference, PictureMarkerSymbol, ArcGISTiledMapServiceLayer, FeatureLayer, InfoTemplate
+            ) {
+                map = new Map("map", {
+                    zoom: 12
+                });
+                var baseMapLayer = new ArcGISTiledMapServiceLayer("http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaCities_Community_BaseMap_CHN/ShenYang_Community_BaseMap_CHN/MapServer");
+                map.addLayer(baseMapLayer);
+
+                _Graphic = Graphic;
+                _Map = Map;
+                _OverviewMap = OverviewMap;
+                _Scalebar = Scalebar;
+                _Graphic = Graphic;
+                _GraphicsLayer = GraphicsLayer;
+                _Point = Point;
+                _SpatialReference = SpatialReference;
+                _PictureMarkerSymbol = PictureMarkerSymbol;
+                _InfoTemplate = InfoTemplate;
+                countyLayer = new GraphicsLayer();
+                map.on("mouse-move", move1);
+            });
+        }
+        var ck1 = function (evt) {
+            var rd = Math.random() * 100;
+            rd = rd.toFixed(3);
+            var rd1 = Math.random() * 1000;
+            rd1 = Math.ceil(rd1);
+            var template = new _InfoTemplate("详细信息", "<div style='font-size:16px'>地址: 沈河区北站路102号<br/>压力：" + rd1 + "kPa<br/>管径尺寸:" + rd + "mm</div>");
+            countyLayer.infoTemplate = template;
+        }
+        var move1 = function (evt) {
+            var tempElement = document.getElementById("divShowXY");
+            var p = evt.mapPoint;
+            tempElement.innerHTML = "X:" + p.x + ",Y:" + p.y;
+        }
+        //重置zoom等级
+        var resetPoint = function () {
+            map.removeLayer(countyLayer);
+            map.setZoom(13);
+        }
+        //定位3点
+        var zoomToPoint = function (x, y) {
+            map.removeLayer(countyLayer);
+            var point = new _Point(13736279.194328567, 5130240.568807118, new _SpatialReference({ wkid: 102100 }));
+            var point1 = new _Point(13736412, 5130170, new _SpatialReference({ wkid: 102100 }));
+            var point2 = new _Point(13736436, 5130382, new _SpatialReference({ wkid: 102100 }));
+            map.centerAndZoom(point, 17);
+
+            var picBaseUrl = "images/1.png";
+            picBaseUrl1 = "images/2.png";
+            picBaseUrl2 = "images/3.png";
+
+            pictureMarkerSymbol = new _PictureMarkerSymbol(picBaseUrl, 24, 32);
+            pictureMarkerSymbol1 = new _PictureMarkerSymbol(picBaseUrl1, 24, 32);
+            pictureMarkerSymbol2 = new _PictureMarkerSymbol(picBaseUrl2, 24, 32);
+
+            var tempGraphic = new _Graphic(point, pictureMarkerSymbol);
+            var tempGraphic1 = new _Graphic(point1, pictureMarkerSymbol1);
+            var tempGraphic2 = new _Graphic(point2, pictureMarkerSymbol2);
+
+            countyLayer.add(tempGraphic);
+            countyLayer.add(tempGraphic1);
+            countyLayer.add(tempGraphic2);
+            countyLayer.on("click", ck1);
+            map.addLayer(countyLayer);
+        }
+        //定位一点
+        var zoomTo1 = function () {
+            var point = new _Point(13736279.194328567, 5130240.568807118, new _SpatialReference({ wkid: 102100 }));
+            map.centerAndZoom(point, 18);
+        }
+    </script>
+    <style>
+        .s1 {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 150px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 100%; margin: 0; padding: 0"></div>
+    <div id="divShowXY" class="s1"></div>
+</body>
+</html>

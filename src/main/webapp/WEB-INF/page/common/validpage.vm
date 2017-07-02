@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无法操作</title>
+	#include_html5()
+</head>
+<body>
+    <div style="width:596px;margin: 0 auto;margin-top: 6%;">
+    <img alt="无法操作" src="${rc.contextPath}/images/theme/blue/login/valid.png" title="无法操作">
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tools>
+	<toolbox>
+		<tool key="BaseTool" scope="request" class="com.fastwork.platform.utils.BaseTool"/>
+	</toolbox>
+</tools>
+
+

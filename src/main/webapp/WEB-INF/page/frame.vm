@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>弹出层</title>
+	#include_css(["bootstrap"])
+	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/main.css">
+	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/blue/common.css">
+	#include_html5()
+</head>
+<body>
+	<div class="pup">
+		<div class="ftitle"><i></i>上海市消防第五大队</div>
+		<div class="tcontent">
+			<div class="stab">
+				<ul>
+					<li class="active">综合信息</li>
+					<li>综合信息</li>
+					<li>综合信息</li>
+					<li>综合信息</li>
+					<li>综合信息</li>
+				</ul>
+			</div>
+			<div class="tab_box"> 
+				 <div>时事</div>
+				 <div class="hide">体育</div>
+				 <div class="hide">娱乐</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var $div_li =$("div.stab ul li");
+			$div_li.click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				var index =  $div_li.index(this);
+				$("div.tab_box > div")   	
+					.eq(index).show()  
+					.siblings().hide();
+			})	
+		});
+	</script>
+</body>
+</html>

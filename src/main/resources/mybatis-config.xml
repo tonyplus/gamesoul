@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//my batis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 开启缓存支持 -->  
+		<setting name="cacheEnabled" value="false" />
+		
+         <!-- 在null时也调用 setter,适应于返回Map,3.2版本以上可用 -->  
+        <setting name="callSettersOnNulls" value="true"/>
+        
+        <!--  设置但JDBC类型为空时,某些驱动程序 要指定值,default:OTHER -->  
+		 <setting name="jdbcTypeForNull" value="NULL"/>   
+	</settings>	
+	<plugins>
+        <plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
+        	 <property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect"/>
+        	 
+        </plugin>
+    </plugins>
+</configuration>

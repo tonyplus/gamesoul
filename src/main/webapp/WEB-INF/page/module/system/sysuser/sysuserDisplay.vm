@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理</title>
+	#include_css(["bootstrap","validate","date","main"])
+	#include_html5()
+</head>
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form name="userform" id="userform" class="form-horizontal">
+		<table class="zwTable">
+			<tbody>
+    			<tr>
+    				<td align="right"><label for="logacc">账号:</label></td>
+    				<td><input type="text" class="form-control" id="username" name="username" value="$!{sysUser.username}"  maxlength="100" readonly></td>
+    				<td align="right"><label for="usr">用户名:</label></td>
+    				<td><input type="text" class="form-control" id="nickname" name="nickname" value="$!{sysUser.nickname}" maxlength="50" readonly></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="sex">性别:</label></td>
+    				<td><select id="sex" name="sex"  selectvalue="${sysUser.sex}" class="form-control text-center" disabled></select>	</td>
+    				<td align="right"><label for="birthday">出生年月:</label></td>
+    				<td>
+						<input class="form-control" size="16" id="birthday" name="birthday" type="text" value="$!date.format('yyyy-MM-dd',$!sysUser.birthday)" readonly>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="phone">手机号:</label></td>
+    				<td><input type="text" class="form-control" id="phone" name="phone" value="$!{sysUser.phone}" maxlength="20" readonly></td>
+    				<td align="right"><label for="tel">办公电话:</label></td>
+    				<td><input type="text" class="form-control" id="tel" name="tel" value="$!{sysUser.tel}" maxlength="20" readonly></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="email">电子邮箱:</label></td>
+    				<td><input type="text" class="form-control" id="email" name="email" value="$!{sysUser.email}" maxlength="50" readonly></td>
+    				<td align="right"><label for="idcard">身份证:</label></td>
+    				<td><input type="text" class="form-control" id="idcard" name="idcard" value="$!{sysUser.idcard}" maxlength="50" readonly></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="address">家庭地址:</label></td>
+    				<td><input type="text" class="form-control" id="address" name="address" value="$!{sysUser.address}" maxlength="100" readonly></td>
+    				<td align="right"><label for="hometel">家庭电话:</label></td>
+    				<td><input type="text" class="form-control" id="hometel" name="hometel" value="$!{sysUser.hometel}" maxlength="20" readonly></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="updateper">最近更新人:</label></td>
+    				<td><input type="text" class="form-control" id="updateper" name="updateper" value="$!{sysUser.sysuser.nickname}" maxlength="20" readonly /></td>
+					<td align="right"><label for="updatetime">最近更新时间:</label></td>
+    				<td><input class="form-control" size="16" id="updatetime" name="updatetime" type="text" value="$!date.format('yyyy-MM-dd hh:mm:ss',$!sysUser.updatetime)" readonly /></td>
+    			</tr>
+    			<tr>
+					<td align="right"><label for="usertype">用户类型:</label></td>
+    				<td colspan="3"><select id="usertype" name="usertype"  selectvalue="${sysUser.usertype}" class="form-control text-center" disabled ></select>	</td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="note">描述:</label></td>
+    				<td colspan="3"><textarea class="form-control" id="note" name="note" rows="3" maxlength="500" readonly>$!{sysUser.note}</textarea></td>
+    			</tr>
+			</tbody>
+		</table>
+		
+        <div class="alginCenter">  <button type="button"  class="backBtn" onclick="parent.closeWin()">返回</button></div>
+	</form>
+  </div>
+
+#include_js(["jquery","bootstrap","validate","dateutil","select_option","datepicker"])
+<script type="text/javascript">
+  $(document).ready(function() {
+	//初始化下拉框
+	SelectOption.loadSex("sex");//性别
+	SelectOption.loadUserType("usertype");//用户类型
+  });
+</script>
+</body>
+</html>

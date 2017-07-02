@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastwork.module.system.dao.SysPrivMapper" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="com.fastwork.module.system.entity.SysPriv" >
+	<result column="privid" property="privid" jdbcType="VARCHAR" />
+	<result column="privname" property="privname" jdbcType="VARCHAR" />
+	<result column="privurl" property="privurl" jdbcType="VARCHAR" />
+	<result column="privtype" property="privtype" jdbcType="VARCHAR" />
+	<result column="privimg" property="privimg" jdbcType="VARCHAR" />
+	<result column="privlevel" property="privlevel" jdbcType="CHAR" />
+	<result column="parentid" property="parentid" jdbcType="VARCHAR" />
+	<result column="ordernum" property="ordernum" jdbcType="INTEGER" />
+	<result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+	<result column="notes" property="notes" jdbcType="VARCHAR" />
+</resultMap>
+
+<!-- sys_priv table all fields -->
+<sql id="Base_Column_List" >
+	 privid,privname,privurl,privtype,privimg,privlevel,parentid,ordernum,updatetime,notes
+</sql>
+
+ <!-- 分页查询 -->
+<select id ="loadByUserid" resultMap="BaseResultMap" parameterType="string">
+    select 
+    	distinct priv.*
+    from sys_priv priv 
+	left join lk_role_priv lrp on lrp.privid=priv.privid 
+	left join lk_user_role lur on lur.roleid=lrp.roleid
+	where lur.userid=#{userid} 
+  </select>
+
+</mapper>   

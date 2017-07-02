@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MirsStyleTheming xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <RootBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </RootBackground>
+  <NavBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </NavBackground>
+  <WorkBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </WorkBackground>
+  <WorkTitleBarBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </WorkTitleBarBackground>
+  <MdiBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </MdiBackground>
+  <ChildWindowBackground>
+    <A>255</A>
+    <R>34</R>
+    <G>34</G>
+    <B>34</B>
+  </ChildWindowBackground>
+	<!--样式信息配置节，其中ThemeInfomation为备用-->
+	<ThemeFileName>Landscape</ThemeFileName>
+	<ThemeTitle>深蓝风景</ThemeTitle>
+	
+</MirsStyleTheming>

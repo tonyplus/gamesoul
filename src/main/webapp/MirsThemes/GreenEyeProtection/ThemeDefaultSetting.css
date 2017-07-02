@@ -1,0 +1,235 @@
+/*绿色主题*/
+.rwTitle {
+    background-color: #50833B;
+    background-image: url("Images/righttop-bg.png");
+}
+
+.rootNav {
+    background-color: #2C4230;
+}
+
+.mfContainerShow {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mfContainer:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.msetItemContainer:hover {
+    background-color: #6E9E4D;
+}
+
+.mnTwoBg {
+    background-color: #a2da79;
+}
+.mnThreeBg {
+    background-color:#AEE089;
+}
+.mnFourBg {
+    background-color:#BBE899;
+}
+.funBg {
+    background-color: #fbfff1;
+}
+
+    .funBg:hover {
+        background-color: #c6dac1;
+    }
+
+.mOvnMainContainer {
+    background-color: #7bb056;
+}
+
+.mOvnOptionContainer {
+    background-color: #9BC37E;
+}
+
+.mfContainerNormal {
+    background-color: transparent;
+}
+
+.msetItemsBar {
+    background-color: #9BC37E;
+}
+
+.popRContainer {
+    background-color: #7bb056;
+}
+
+.OptionFun {
+    background-color: #9BC37E;
+margin-bottom:1px;
+}
+
+    .OptionFun:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+
+.optionContainer {
+    background-color: #9BC37E;
+}
+
+.option {
+    background-color: #9BC37E;
+    border-bottom: 1px solid #7BB056;
+}
+
+    .option:hover {
+        background-color: #6E9E4D;
+    }
+
+.thmConfirmContainer {
+    background-color: #34561B;
+}
+
+.mcSecondContainer {
+    background-color: #FEFFFC;
+    background-image: url("Images/city-bg.png");
+}
+
+.thmContainer {
+    background-color: #7bb056;
+}
+
+.rootNavScreen {
+    background-color: #2C4230;
+}
+
+.rwIfTitleContainer {
+    background-color: #dcf0da;
+}
+
+.rwIfTitleContainerSel{
+    background-color: #b4e1b0;
+}
+
+.msetMainContainer {
+    background-color: #7bb056;
+}
+
+.popLContainer{
+    background-image:url('Images/arrow.png');
+}
+
+.mOvnPopimg{
+    background-image:url('Images/arrow.png')
+}
+.msetArrow{
+    background-image:url('Images/arrow.png')
+}
+.funBgShow {
+    background-repeat: repeat-y;
+    background-color: #C6DAC1;
+}
+
+
+/************************************* WinManagerBar工具条 开始 *************************************************************/
+
+/*工具条主体颜色*/
+.wmbRootContainer {
+    background-color: #f6faec;
+    border-top: 1px solid #d3d3d3;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+}
+
+/*前按钮*/
+.wmbFuncBtn_Prev_A {
+    background-image: url('Images/prev_A.png');
+    cursor:not-allowed;
+}
+
+.wmbFuncBtn_Prev_B {
+    background-image: url('Images/prev_B.png');
+}
+
+/*后按钮*/
+.wmbFuncBtn_Next_A {
+    background-image: url('Images/next_A.png');
+    cursor:not-allowed;
+
+}
+
+.wmbFuncBtn_Next_B {
+    background-image: url('Images/next_B.png');
+}
+/*选项样式*/
+.wmbFuncOption {
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari 和 Chrome */
+    -o-transition: all 0.5s; /* Opera */
+    background-image: url('Images/SplitLine.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+    /*选项划上颜色*/
+    .wmbFuncOption:hover {
+        background-color: #c6dac1;
+    }
+
+.wmbFuncOption_Select {
+    background-color: #c6dac1;
+
+    background-image: url('Images/SplitLine.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    height:35px;
+}
+/*选项字体样式*/
+.wmbFuncTitleBar {
+    color: #000000;
+}
+
+/*关闭按钮样式*/
+.wmbFuncCloseBtn_A {
+    background-image: url('Images/close_A.png');
+}
+
+.wmbFuncCloseBtn_B {
+    background-image: url('Images/close_B.png');
+}
+
+
+/*平铺窗口、水平平铺、垂直平铺、最大化 按钮样式*/
+.wmbPingPu {
+    background-image: url('Images/PingPu_A.png');
+}
+
+    .wmbPingPu:hover {
+        background-image: url('Images/PingPu_B.png');
+    }
+
+.wmbShuiPing {
+    background-image: url('Images/ShuiPing_A.png');
+}
+
+    .wmbShuiPing:hover {
+        background-image: url('Images/ShuiPing_B.png');
+    }
+
+.wmbChuiZhi {
+    background-image: url('Images/ChuiZhi_A.png');
+}
+
+    .wmbChuiZhi:hover {
+        background-image: url('Images/ChuiZhi_B.png');
+    }
+
+.wmbZuiDa {
+    background-image: url('Images/ZuiDaHua_A.png');
+}
+
+    .wmbZuiDa:hover {
+        background-image: url('Images/ZuiDaHua_B.png');
+    }
+
+/*分割线样式*/
+.wmbSplitLine {
+    background-image: url('Images/SplitLine.png');
+}
+
+/************************************* WinManagerBar工具条 结束 *************************************************************/
+
+

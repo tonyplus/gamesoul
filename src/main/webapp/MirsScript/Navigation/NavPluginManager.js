@@ -1,0 +1,1 @@
+﻿!function(){window.Mirs=window.Mirs||{};window.Mirs.Plugins=window.Mirs.Plugins||{}}();

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理</title>
+	#include_css(["bootstrap","ztree","main"])
+	#include_html5()
+</head>
+<body>
+<div class="container">
+   <form name="userform" id="userform" class="form-horizontal">
+	    <input type="hidden" id="userid" name="userid" value="$!{userid}">
+		<div class="row">
+			<div class="form-group col-sm-6">
+    			<label class="control-label col-sm-12" style="text-align:center">角色分配</label>
+			</div>
+			
+			<div class="form-group col-sm-6">
+    			<label class="control-label col-sm-12" style="text-align:center">用户权限</label>
+		    </div>
+		</div>  
+		  
+		<div >
+			<div class="form-group col-sm-6">
+    			<div class="col-sm-12">
+					  <div class="checkbox">
+						 #foreach($item in $roleList)
+    						 <label><input type="checkbox" name="id" onclick="selectRole()" value="$!{item.id}"  #if($item.checked =="true") checked="checked" #end/>$!{item.rolename}</label>&nbsp;&nbsp;
+                         #end                      
+                      </div>
+				</div>
+			</div>
+			
+			<div class="form-group col-sm-6">
+    			<div class="col-sm-12">
+					<div style="width:214px; float:left;">
+                    	<div>
+                            <div></div>
+                            <div class="zTreeDemoBackground left">
+                                 <ul id="privtree" class="ztree"></ul>
+                            </div>
+                    	</div>
+                    </div>
+				</div>
+		    </div>
+		</div>  
+		
+
+		<div class="alginCenter">
+		    <button type="button" class="backBtn" onclick="saveUserRole()">保存</button>
+            <button type="button" class="backBtn" onclick="parent.closeWin('dialogModal')"><span>返回</span></button>
+		</div>
+  </form>
+</div>
+
+#include_js(["jquery","bootstrap","ztree"])
+<script src="${rc.contextPath}/js/module/system/sysuser/sysuserRole.js"></script>
+</body>
+</html>

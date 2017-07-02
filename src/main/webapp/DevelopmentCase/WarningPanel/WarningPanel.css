@@ -1,0 +1,157 @@
+﻿@import url('DemoCtrol.css');
+
+
+.arRootContainer {
+    position: fixed;
+    /*background-color: black;*/
+    top: 0;
+    bottom: 0;
+    left: -450px;
+    max-width: 450px;
+    width: 100%;
+    transition: left 0.3s;
+    -moz-transition: left 0.3s; /* Firefox 4 */
+    -webkit-transition: left 0.3s; /* Safari and Chrome */
+    -o-transition: left 0.3s; /* Opera */
+    color: white;
+}
+
+.arTopContainer {
+    height: 46px;
+    background-color: #2d3747;
+    border-bottom: 1px solid #ffffff;
+}
+
+.arBackContainer {
+    height: 46px;
+    width: 15%;
+    float: left;
+    line-height: 46px;
+    cursor: pointer;
+}
+
+    .arBackContainer img {
+        margin-left: 26%;
+        margin-top: 10px;
+    }
+
+.arTopTitleContainer {
+    width: 70%;
+    height: 46px;
+    float: left;
+    text-align: center;
+    line-height: 46px;
+}
+
+.arInfoContainer {
+    position: absolute;
+    top: 46px;
+    bottom: 0;
+    max-width: 450px;
+    width: 100%;
+    background-color: #242c38;
+    overflow-y: auto;
+}
+
+    .arInfoContainer ul {
+        list-style: none;
+    }
+
+        .arInfoContainer ul li {
+            height: 45px;
+            padding: 7px;
+            cursor: pointer;
+        }
+
+
+            .arInfoContainer ul li:hover {
+                background-color: #666666;
+            }
+
+
+.arImg1 {
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+}
+
+
+
+.arPTitle {
+    /*width: 85%;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.arImg2 {
+    width: 24px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.arPInfoContainer {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.arPart1Container {
+    margin: 0px 10px;
+    display: none;
+}
+
+
+.arLine {
+    background-image: url(images/line.png);
+    height: 40px;
+}
+
+    .arLine div {
+        line-height: 40px;
+        background-color: #242c38;
+        margin-left: 20px;
+        text-align: center;
+        padding: 0px 10px;
+        float: left;
+    }
+
+.arPContent {
+    color: #e21f26;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.ifrDiv {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 450px;
+}
+
+.green {
+    color: #22ae34;
+}
+
+
+/*手机端*/
+@media screen and (max-width:414px) {
+    .arPTitleDiv {
+        float: left;
+        width: 50%;
+    }
+}
+
+
+/*pc端*/
+@media screen and (min-width:415px) {
+    .arPTitleDiv {
+        float: left;
+        width: 280px;
+    }
+}

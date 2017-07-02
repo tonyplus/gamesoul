@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安全管理综合信息系统</title>
+    <link href="${rc.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="${rc.contextPath}/js/lib/html5shiv-3.7.2.min.js"></script>
+      <script src="${rc.contextPath}/js/lib/respond-1.4.2.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div>
+    	<img align="absmiddle" style="height:30px;width:30px" src="${rc.contextPath}/images/loading.gif" class="img-responsive center-block img-thumbnail" >
+		<span style="line-height: 30px;TEXT-ALIGN:right;height:30px;">
+			正在删除,请稍后......
+		</span>
+	</div>
+<script src="${rc.contextPath}/js/lib/jquery-1.11.2.min.js"></script>
+<script src="${rc.contextPath}/js/lib/bootstrap.min.js"></script>
+</body>
+</html>

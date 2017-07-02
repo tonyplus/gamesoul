@@ -1,0 +1,74 @@
+﻿
+
+.gaRootContainer {
+    position: absolute;
+    /*background-color: black;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s; /* Firefox 4 */
+    -webkit-transition: all 0.3s; /* Safari and Chrome */
+    -o-transition: all 0.3s; /* Opera */
+    z-index: 10;
+    -moz-transform: translateX(-450px);
+    -ms-transform: translateX(-450px);
+    -o-transform: translateX(-450px);
+    -webkit-transform: translateX(-450px);
+    transform: translateX(-450px);
+}
+
+.gaTopContainer {
+    height: 46px;
+    background-color: #c0392b;
+    border-bottom: 1px solid #ffffff;
+}
+
+.gaBackContainer {
+    height: 46px;
+    width: 15%;
+    float: left;
+    line-height: 46px;
+    cursor: pointer;
+    background-image: url('../images/back.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .gaBackContainer img {
+        margin-left: 26%;
+        margin-top: 10px;
+    }
+
+.gaTopTitleContainer {
+    width: 70%;
+    height: 46px;
+    float: left;
+    text-align: center;
+    line-height: 46px;
+    color: White;
+    font-size: 24px;
+}
+
+.gaMainBar {
+    position: absolute;
+    bottom: 0px;
+    top: 46px;
+    max-width: 450px;
+    width: 100%;
+    background-color: #242c38;
+    overflow-y: auto;
+}
+
+.ga1thContainer {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #242c38;
+}
+
+    .ga1thContainer img {
+        margin-top: 12px;
+        max-width: 100%;
+    }

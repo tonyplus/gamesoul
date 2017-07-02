@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>操作文档列表</title>
+	#include_css(["bootstrap","font","jqgrid","jqueryui","layer","main"])
+	#include_html5()
+</head>
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="entform" name="entform" class="form-horizontal" >	
+    	<table class="zwTable" id="attfile">
+			#foreach($file in $fileList)
+			<tr>
+				<td><span style="color:blue;cursor:pointer;" onclick="downloadFile('$!{file.name}')">$!{file.name}</span></td>
+			</tr>
+			#end
+		</table>
+	</form>
+  </div>
+#include_js(["jquery","bootstrap"])
+<script>
+	function downloadFile(filename){
+		window.location.href = "${rc.contextPath}/login/downloadOperationFile?filename="+filename;
+	}
+</script>
+</body>
+</html>

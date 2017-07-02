@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>角色管理</title>
+    #include_css(["bootstrap","ztree","main"])
+	#include_html5()
+</head>
+<body>
+  <div class="container">
+	<form id="roleform" name="roleform" class="form-horizontal">
+		<label for="inputEmail3" class="col-sm-4 control-label"></label>
+		<input type="hidden" id = "roleids" name = "roleids" value = "$!{roleids}" />
+		<div style="width:214px; float:left;margin-top:30px;">
+        	<div>
+                <div></div>
+                <div class="zTreeDemoBackground left">
+                  <ul id="privtree" class="ztree"></ul>
+                </div>
+        	</div>
+        </div>
+		
+			<div class="col-sm-offset-5 col-sm-4">
+			    <button type="submit" class="backBtn" onclick="saveRolePriv()">保存</button>
+                <button type="button" class="backBtn" onclick="parent.closeWin()"><span>返回</span></button>
+			</div>
+		  
+	</form>
+  </div>
+
+  #include_js(["jquery","bootstrap","ztree"])
+  <script src="${rc.contextPath}/js/module/system/sysrole/sysrolePriv.js"></script>  
+</body>
+</html>

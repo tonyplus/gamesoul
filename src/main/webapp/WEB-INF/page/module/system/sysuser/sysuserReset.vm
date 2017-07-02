@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理</title>
+	#include_css(["bootstrap","validate","main"])
+	#include_html5()
+	
+</head>
+
+<body style="overflow-y:auto">
+<div class="container" style="padding-top:12px;">
+   <form name="userform" id="userform" class="form-horizontal">
+        <input type="hidden"  id="userid" name="userid" value="$!{sysUser.userid}"/>
+    	<input type="hidden"  id="username" name="username" value="$!{sysUser.username}"/>
+    	<input type="hidden"  id="password" name="password" value="$!{sysUser.password}"/>
+    	
+        <table class="tableStyle" width="400px">
+            <tbody>
+    			<tr>
+    				<td align="right"><label for="password">当前密码:&nbsp;<font style="color:red">*</font></label></td>
+    				<td><input type="password" class="form-control" style="width:190px" id="password1" name="password1" value="" maxlength="16"></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="password">新密码:&nbsp;<font style="color:red">*</font></label></td>
+    				<td><input type="password" class="form-control" style="width:190px" id="password2" name="password2" value="" maxlength="16"></td>
+    			</tr>
+    			<tr>
+    				<td align="right"><label for="password">确认新密码:&nbsp;<font style="color:red">*</font></label></td>
+    				<td><input type="password" class="form-control" style="width:190px" id="password3" name="password3" value="" maxlength="16"></td>
+    			</tr>
+    		</tbody>
+    	</table>
+		<div class="alginCenter">
+		    <button type="submit" class="backBtn">确定</button>
+            <button type="button"  class="backBtn" onclick="parent.closeWin('dialogModal')"><span>返回</span></button>
+		</div>
+  </form>
+</div>
+#include_js(["jquery","bootstrap","validate","datepicker"])
+<script src="${rc.contextPath}/js/module/system/sysuser/sysuserReset.js"></script>
+</body>
+</html>

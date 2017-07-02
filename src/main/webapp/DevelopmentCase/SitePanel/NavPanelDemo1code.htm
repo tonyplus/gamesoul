@@ -1,0 +1,1285 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body{
+            background-color:#fff;
+        }
+        p.MsoNormal {
+            margin-bottom: .0001pt;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            font-size: 10.5pt;
+            font-family: "Calibri","sans-serif";
+            margin-left: 0cm;
+            margin-right: 0cm;
+            margin-top: 0cm;
+        }
+
+        .mximg {
+            float: left;
+            background-image: url('images/站点管理.png');
+            height:672px;
+            width:305px;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+    	.style1
+        {
+            font-size: 22pt;
+        }
+		</style>
+</head>
+<body>
+
+
+	<p align="left" class="MsoNormal">
+		<b style="mso-bidi-font-weight:normal"><sub>
+		<span 
+            style="font-family:宋体;mso-ascii-font-family:NSimSun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+NSimSun;mso-bidi-font-family:NSimSun;color:#0070C0;mso-font-kerning:0pt;border-bottom:1px dotted #0070cb;" 
+            class="style1">&raquo;站点管理（ClientPanel使用案例）</span><span 
+			lang="EN-US" style="font-size:
+30.0pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;color:#0070C0;
+mso-font-kerning:0pt"><o:p></o:p></span></sub></b></p>
+    <br />
+
+
+    <div class="mximg"></div>
+    <div style="float:left;width:950px;margin-left:20px;">
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt">!</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">初始化名称空间</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>window.CurProject = window.CurProject || {};<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (window.CurProject.Common4x) </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">throw</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">new</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> Error(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&#39;CurProject.Common </span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">类重复加载<span lang="EN-US">&#39;</span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> uc = window.CurProject.Common4x = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>uc.dbing = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (instance, method) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> method.apply(instance, arguments);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">事件通用函数</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>uc.addHandler = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> (element, eventName, handler) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (element.addEventListener) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>element.addEventListener(eventName, handler, </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">false</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">else</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (element.attachEvent) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>element.attachEvent(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&#39;on&#39;</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> + eventName, handler);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>uc.ah = uc.addHandler;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt">}();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt">!</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> (g) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">初始化名称空间</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>window.CurProject = window.CurProject || {};<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">实现</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (window.CurProject.NavPanelDemo1) </span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">throw</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">new</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> Error(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&#39;CurProject.NavPanelDemo1 </span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">类重复加载<span lang="EN-US">&#39;</span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> curProjectNavPanelDemo1 = window.CurProject.NavPanelDemo1 = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">this</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">._masterElement = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">this</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">._OpenIframe = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> _curProjectNavPanelDemo1 = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">获得<span lang="EN-US"> CurProject.NavPanelDemo1 </span>实例</span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>curProjectNavPanelDemo1.getInstance = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> rtn = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (_curProjectNavPanelDemo1 == </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rtn = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">new</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> window.CurProject.NavPanelDemo1();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>_curProjectNavPanelDemo1 = rtn;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">else</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rtn = _curProjectNavPanelDemo1;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> rtn;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>curProjectNavPanelDemo1.prototype.getOpenIframe = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">this</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">._OpenIframe;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>curProjectNavPanelDemo1.prototype.initParms = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> (element, model) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> headEmt = document.getElementsByTagName(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;head&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">)[0];<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> linkEmt = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;link&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>linkEmt.href = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;DevelopmentCase/SitePanel/NavPanelDemo1.css&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>linkEmt.rel = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;stylesheet&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>linkEmt.type = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;text/css&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>linkEmt.id = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;NavPanelDemo1Css&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>headEmt.appendChild(linkEmt);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>CreateEle();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>g.ah(element, </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;click&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">, PanelActive);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> tempBtn = CreateBtn();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>element.appendChild(tempBtn);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> PanelActive() {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempEle.Active();</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">激活面板对象<span lang="EN-US">(</span>显示<span lang="EN-US">)</span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>setTimeout(</span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>RootDiv.style.transform = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;translateX(0)&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}, 1)<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> PanelHide() {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>RootDiv.style.transform = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;translateX(-450px)&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>setTimeout(</span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempEle.Hide();</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:green;
+mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">隐藏面板对象</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}, 300)<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> tempEle = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> RootDiv = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> CreateEle = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">获得<span lang="EN-US">NavPanelControl</span>唯一实例对象</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> ins = app.getNavPanelControl();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">创建<span lang="EN-US">ClientPanel</span>实例对象</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> CPins = ins.createClientPanel();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempEle = CPins.Create();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempEle.id = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;NavPanelApiDemo1&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">/*---------------------</span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">自定义<span lang="EN-US">element---------------------------*/</span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> rtn = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;div&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>RootDiv = rtn;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rtn.className = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;gaRootContainer&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//rtn.id = &quot;3&quot;;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> gaTopContainer = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;div&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaTopContainer.className = </span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;gaTopContainer&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rtn.appendChild(gaTopContainer);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> gaBackContainer = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;div&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaBackContainer.className = </span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;gaBackContainer&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaTopContainer.appendChild(gaBackContainer);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>g.ah(gaBackContainer, </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;click&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">, PanelHide);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> gaTopTitleContainer = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;div&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaTopTitleContainer.className = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;gaTopTitleContainer&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaTopTitleContainer.innerHTML = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;</span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">站点管理<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaTopContainer.appendChild(gaTopTitleContainer);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> gaMainBar = document.createElement(</span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;div&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaMainBar.className = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;gaMainBar&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>gaMainBar.innerHTML = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;&lt;div class=&#39;ga1thContainer&#39;&gt; &lt;img src=&#39;DevelopmentCase/SitePanel/images/part1.png&#39; /&gt; &lt;/div&gt; &lt;div class=&#39;ga1thContainer&#39;&gt; &lt;img src=&#39;DevelopmentCase/SitePanel/images/part2.png&#39; /&gt; &lt;/div&gt; &lt;div class=&#39;ga1thContainer&#39;&gt; &lt;img src=&#39;DevelopmentCase/SitePanel/images/part3.png&#39; /&gt; &lt;/div&gt; &lt;div class=&#39;ga1thContainer&#39;&gt; &lt;img src=&#39;DevelopmentCase/SitePanel/images/part4.png&#39; /&gt; &lt;/div&gt;&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rtn.appendChild(gaMainBar);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">设置自定义<span lang="EN-US">element</span>，同时会添加进<span lang="EN-US">ClientPanel</span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempEle.setCurrentEle(rtn);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//NavPanelControl</span><span style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">添加<span lang="EN-US">ClientPanel</span></span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ins.addClientPanel(tempEle);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> CreateBtn = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> btnC = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;input&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>btnC.type = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;button&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>btnC.className = </span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;btnC&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>btnC.value = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>btnC.title = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;</span><span style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">点击查看代码<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>btnC.id = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;btnC&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>g.ah(btnC, </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&quot;click&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">, EventBubbling);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>g.ah(btnC, </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">&#39;click&#39;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">, ScreenClick);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> btnC;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> ScreenClick = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> () {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> mdi = app.getWorkControl().getMdiControl();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> OpenIframe = window.CurProject.NavPanelDemo1.getInstance().getOpenIframe();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> tempIframe = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">null</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (OpenIframe) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempIframe = document.getElementById(OpenIframe.id);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (tempIframe) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">return</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">else</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>mdi.childrenClear();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> tempWd = app.getWorkControl().getMdiControl().createChildWindow(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:#A31515;mso-font-kerning:0pt">&quot;E6E41C55-2016-472A-97C6-A7E86CB500F8&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"> iframeEle = document.createElement(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;iframe&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>iframeEle.src = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;DevelopmentCase/SitePanel/NavPanelDemo1code.htm&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span>iframeEle.style.width = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;100%&quot;</span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>iframeEle.style.height = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;100%&quot;</span><span lang="EN-US" style="font-size:
+9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>iframeEle.id = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;xpanel&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempWd.setIframeElement(iframeEle);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempWd.getContainer().appendChild(iframeEle);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempWd.setCaption(</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:#A31515;
+mso-font-kerning:0pt">&quot;</span><span style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:#A31515;mso-font-kerning:0pt">站点管理<span lang="EN-US">JS</span>源代码<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tempWd.show();<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>OpenIframe = iframeEle;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">//</span><span style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:green;mso-font-kerning:0pt">去除冒泡，防止点击事件穿透</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> EventBubbling = </span><span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">function</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (evt) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">var</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> e = (evt) ? evt : window.event;<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">if</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> (window.event) {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>e.cancelBubble = </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:blue;
+mso-font-kerning:0pt">true</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt">; </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:green;
+mso-font-kerning:0pt">// ie</span><span style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">下阻止冒泡</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:blue;mso-font-kerning:0pt">else</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"> {<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>e.stopPropagation(); </span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:新宋体;color:green;
+mso-font-kerning:0pt">// </span><span style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:green;mso-font-kerning:0pt">其它浏览器下阻止冒泡</span><span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin;mso-bidi-font-family:新宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p align="left" class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:
+新宋体;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+        <p class="MsoNormal">
+            <span lang="EN-US" style="font-size:9.5pt;font-family:新宋体;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+新宋体;color:black;mso-font-kerning:0pt">}(CurProject.Common4x);</span><span lang="EN-US"><o:p></o:p></span></p>
+    </div>
+</body>
+</html>

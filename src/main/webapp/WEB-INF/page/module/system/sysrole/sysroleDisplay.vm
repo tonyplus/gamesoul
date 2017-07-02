@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>角色管理</title>
+    #include_css(["bootstrap","main"])
+	#include_html5()
+</head>
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="roleform" name="roleform" class="form-horizontal">
+		<input type="hidden" id="roleid" name="roleid" value="$!{sysRole.roleid}"/>
+		<table class="zwTable">
+				<tr>
+                    <td align="right"><label for="rolename">角色名:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="rolename" name="rolename"  value="$!{sysRole.rolename}" disabled maxlength="100"></td>
+					<td align="right" class="td_0"><label for="usertype">角色类型:&nbsp;<font style="color:red">*</font></label></td>
+					<td><select id="usertype" name="usertype" selectvalue="SYS" class="form-control text-center" disabled ></select></td>					
+				</tr>
+				<tr>
+                    <td align="right"><label for="updateper">更新人:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="updateper" name="updateper"  value="$!{sysRole.updateper}" disabled maxlength="100"></td>
+					<td align="right"><label for="updatetime">更新时间:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="updatetime" name="updatetime"  value="$!date.format('yyyy-MM-dd HH:mm:ss',$!{sysRole.updatetime})" disabled ></td>					
+				</tr>
+				<tr>
+                    <td align="right"><label for="note">备注:</label></td>
+					<td colspan="3"><textarea class="form-control" id="note" name="note" rows="5" maxlength="300" disabled>$!{sysRole.note}</textarea></td>
+				</tr>
+			</table>
+		
+		<div class="col-sm-offset-5 col-sm-4">
+            <button type="button" class="backBtn" onclick="parent.closeWin()"">返回</button>
+		</div>
+		
+	</form>
+  </div>
+
+  #include_js(["jquery","bootstrap","formutils","select_option"])
+  <script type="text/javascript">
+      $(document).ready(function() {
+    	//初始化下拉框
+    	SelectOption.loadUserType("usertype");//用户类型
+      });
+    </script>
+</body>
+</html>

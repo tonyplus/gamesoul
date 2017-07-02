@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>角色管理</title>
+	#include_css(["bootstrap","validate","main"])
+	#include_html5()
+</head>
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="roleform" name="roleform" class="form-horizontal" >
+		<input type="hidden" id="roleid" name="roleid" value="$!{sysRole.roleid}"/>
+		<input type="hidden" id="oldusertype" name="oldusertype" value="$!{sysRole.usertype}"/>
+			<table class="zwTable">
+				<tr>
+                    <td align="right"><label for="rolename">角色名:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="rolename" name="rolename"  value="$!{sysRole.rolename}"  maxlength="100"></td>
+					<td align="right" class="td_0"><label for="usertype">角色类型:&nbsp;<font style="color:red">*</font></label></td>
+					<td><select id="usertype" name="usertype" selectvalue="SYS" class="form-control text-center" disabled ></select></td>					
+				</tr>
+				<tr>
+                    <td align="right"><label for="note">备注:</label></td>
+					<td colspan="3"><textarea class="form-control" id="note" name="note" rows="5" maxlength="300">$!{sysRole.note}</textarea></td>
+				</tr>
+			</table>
+		
+		
+        		<div class="col-sm-offset-5 col-sm-4">
+        		    <button type="submit" class="backBtn">保存</button>
+                    <button type="button"  class="backBtn" onclick="parent.closeWin()"><span>返回</span></button>
+        		</div>
+		
+	</form>
+  </div>
+
+  #include_js(["jquery","bootstrap","validate","select_option"])
+  <script src="${rc.contextPath}/js/module/system/sysrole/sysroleAdd.js"></script>  
+</body>
+</html>

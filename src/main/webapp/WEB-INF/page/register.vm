@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>企业注册</title>
+	#include_css(["jquery","jqueryui","bootstrap","layer","main","validate","ztree"])
+	<link href="${rc.contextPath}/css/common/register.css"  rel="stylesheet" type="text/css" />
+	#include_html5()
+	 <style>
+	.checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {margin-left: 3px;}
+	.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"] {top:5px;}
+	.longitudeDiv { width:50%; float: left;}
+	.latitudeDiv { width:50%; float: left;}
+	</style>
+</head>
+<style>
+		.h3 {
+			text-align: center;
+			color: #fff;
+		}
+	</style>
+</head>
+<body style="background-color: #1b79c1;">
+	<h3 class="h3">企业用户注册</h3>
+
+	<section>
+		<div class="lgnContent">
+         <div class="boxContent" style="background-color: #fff;  width: 920px;margin: 0 auto;overflow:auto;">
+			<input type="hidden" id="register" name="register" value="register"/>
+            <form id="entbusinessinfoform" name="entbusinessinfoform" class="form-horizontal" >	
+				<input type="hidden" name="token" id="token" value="$!{token}"/>##防止表单重复提交 不能放入form表单中 ，否则封装不到javabean中 保存报错
+    			<input type="hidden" name="businessinfoid" id="businessinfoid" value="$!{entBusinessinfo.businessinfoid}"/>
+    			<fieldset >
+    				<legend>注册</legend>
+        			<table class="tableStyle styleTable" id="attfile">
+            			<tbody >
+            				<tr>
+                    			<td align="right"><label for="entname">企业名称:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="entname" name="entname" value="$!{entBusinessinfo.entname}" class="form-control"  maxlength="50"></td>
+                    			<td align="right"><label for="entcode">组织机构代码:&nbsp;</label></td>
+                    			<td><input type="text" id="entcode" name="entcode" value="$!{entBusinessinfo.entcode}" class="form-control"  maxlength="50"></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="city">市: &nbsp;<font style="color:red">*</font></label></td>
+                    			<td><select id="city" name="city"  selectvalue="${entBusinessinfo.city}" class="form-control" onchange="selectCity();"></select></td>
+                    			<td align="right"><label for="area">区县:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><select id="area" name="area"  selectvalue="${entBusinessinfo.area}" class="form-control" onchange="selectArea();" disabled></select></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="street">乡镇: &nbsp;<font style="color:red">*</font></label></td>
+                    			<td><select id="street" name="street"  selectvalue="${entBusinessinfo.street}" class="form-control" onchange="selectStreet();" disabled></select></td>
+                    			<td align="right"><label for="community">村、居委: &nbsp;<font style="color:red">*</font></label></td>
+                    			<td><select id="community" name="community"  selectvalue="${entBusinessinfo.community}" class="form-control" disabled onchange="selectCommunity();"></select></td>
+                    		</tr>
+    						<tr id="trInsert0">
+                				<td align="right"><label for="entaddress">公司地址: &nbsp;</label></td>
+                				<td><select id="entAddresses[0].addresstype" name="entAddresses[0].addresstype" class="form-control"><option>请选择</option><option value="1">办公地址</option><option value="2">生产经营地址</option></select></td>
+    							<td colspan="2">
+                					<div class="InputsWrapper">
+                                			<div class="rowtop">
+                                				<input type="text" id="entAddresses[0].addressname" name="entAddresses[0].addressname" value="" class="form-control"  maxlength="30" style="width:80%;float:left">
+                                				<input type="button" id="AddMoreFileBox" value="增加行" style="float:left;margin-left:10px;"/>
+                                			</div>
+                                   </div>
+                				</td>
+                			</tr>
+                    		<tr>
+                    			<td align="right"><label for="postcode">邮政编码:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="postcode" name="postcode" value="$!{entBusinessinfo.postcode}" class="form-control"  maxlength="6"></td>
+    							<td align="right"><label for="naissancedate">成立日期:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td>
+    							    <input class="form-control" size="16" onclick="WdatePicker()" id="naissancedate" name="naissancedate" type="text" value="$!date.format('yyyy-MM-dd',$!entBusinessinfo.naissancedate)" readonly>
+    							</td>
+                    		</tr>
+    						<tr>
+                    			<td align="right"><label for="validstartdate">营业期限:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td colspan="3">
+    								<div class="validenddateDiv">
+        								<div style="float:left;">
+        									<input type="text" id="validstartdate" name="validstartdate" size="16" onclick="WdatePicker()"  value="$!date.format('yyyy-MM-dd',$!entBusinessinfo.validstartdate)" class="form-control" style="width:220px;"  readonly>
+                                        </div>
+        								<div style="float:left;margin-left:10%;">
+        									<label for="validenddate" style="float:left">至:&nbsp;</label><input type="text" id="validenddate"  name="validenddate" size="16" onclick="WdatePicker()" value="$!date.format('yyyy-MM-dd',$!entBusinessinfo.validenddate)" class="form-control" style="width:200px;float:left;"   readonly>
+                                        </div>
+        								<div style="float:left;margin-left:10px;">
+                                            <input type="checkbox" name="isvalid" id="isvalid" onclick="enddataclick(this);" value="1">无限期
+                                        </div>
+    								</div>
+    							</td>
+                    		</tr>
+    						
+                    		<tr>
+                    			<td align="right"><label for="address">注册地址:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="address" name="address" value="$!{entBusinessinfo.address}" class="form-control"  maxlength="30"></td>
+                    			<td align="right"><label for="enttype">登记注册类型:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="enttype" name="enttype" value="$!{entBusinessinfo.enttype}" class="form-control"  maxlength="15"></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="legalperson">法定代表人:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="legalperson" name="legalperson" value="$!{entBusinessinfo.legalperson}" class="form-control"  maxlength="10"></td>
+                    			<td align="right"><label for="phone">手机号码:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="phone" name="phone" value="$!{entBusinessinfo.phone}" class="form-control"  maxlength="11"></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="registernum">注册号/统一社会信用代码:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="registernum" name="registernum" value="$!{entBusinessinfo.registernum}" class="form-control"  maxlength="30"></td>
+                    			<td align="right"><label for="registermoney">注册资本(万元):&nbsp;<font style="color:red">*</font></label></td>
+                    			<td><input type="text" id="registermoney" name="registermoney" value="$!{entBusinessinfo.registermoney}" class="form-control"  maxlength="8"></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="mainproduct">经营范围:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td colspan="3"><textarea class="form-control" rows="2"  maxlength="150" id="mainproduct" name="mainproduct">$!{entBusinessinfo.mainproduct}</textarea></td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><button type="button" class="backBtn" onclick="position();">地理定位</button></td>
+                    			<td colspan="3">
+									<div class="longitudeDiv">
+    								<div style="float:left;">
+    									<label for="longitude" style="float:left">经度:&nbsp;<font style="color:red">*</font></label><input type="text" id="longitude" name="longitude" value="$!{entBusinessinfo.longitude}" class="form-control" style="width:240px;float:right;"  maxlength="9" />
+                                    </div>
+                                    </div>
+									<div class="latitudeDiv">
+    								<div style="float:right">
+    									<label for="latitude" style="float:left">纬度:&nbsp;<font style="color:red">*</font></label><input type="text" id="latitude" name="latitude" value="$!{entBusinessinfo.latitude}" class="form-control" style="width:240px;float:right;"  maxlength="9" />
+                                    </div>
+                                    </div>
+    							</td>
+                    		</tr>
+                        </tbody>
+            		</table>
+    				</fieldset>
+    				<fieldset >
+    					<legend>分类信息</legend>
+    					<table class="tableStyle styleTable">
+                            <tbody>
+    						<tr>
+                    			<td align="right"><label for="directortypeid">行业主管分类:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td colspan="3"><input id="directortypename" name="directortypename" class="form-control" type="text" selectname="directortypeid" selectvalue="" selectwidth="230px" selectheight="200px;" rootclick="false" disabled /></td>
+                    		</tr>
+    						<tr>
+                    			<td align="right"><label for="deoid">行业主管部门:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td colspan="3">
+                                    <div class="zTreeDemoBackground">
+                                        <ul id="orgtree" class="ztree"></ul>
+                                    </div>
+    								<input type="hidden" id="industryorg" name="industryorg" value="" />
+    								<input type="hidden" id="industryorgname" name="industryorgname" value="" />
+    							</td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="islittle" >是否三小场所:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td>
+    								<div class="islittleDiv">
+        								<label class="radio-inline">
+                    						<input type="radio" name="islittle" value="0">否
+                    					</label>
+                    					<label class="radio-inline">
+                    						<input type="radio" name="islittle" value="1">小档口
+                    					</label>
+                    					<label class="radio-inline">
+                    						<input type="radio" name="islittle" value="2">小作坊
+                    					</label>
+                    					<label class="radio-inline">
+                    						<input type="radio" name="islittle" value="3">小娱乐场所
+                    					</label>
+    								</div>	
+    							</td>
+                    			<td align="right"><label for="isscale">是否规模企业:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td>
+    								<div class="isscaleDiv">
+        								<label class="radio-inline">
+                    						<input type="radio" name="isscale" value="0">否
+                    					 </label>
+                    					 <label class="radio-inline">
+                    						<input type="radio" name="isscale" value="1">是
+                    					 </label>
+    							    </div>	
+    							</td>
+                    		</tr>
+                    		<tr>
+                    			<td align="right"><label for="subjection">单位管辖隶属关系:&nbsp;<font style="color:red">*</font></label></td>
+                    			<td colspan="3"><select id="subjection" name="subjection"  selectvalue="${entBusinessinfo.subjection}" class="form-control"></select></td>
+                    		</tr>
+                            </tbody>
+                        </table>
+            		</fieldset >
+            		<div class="alginCenter">
+            		    <button type="submit" class="backBtn" id="entbtn"><span>注册</span></button>
+            		</div>
+            </form>
+        </div>
+	</div>
+	</section>
+	
+#include_js(["jquery","jqueryui","bootstrap","validate","layer","ztree","select_tree","select_option","datepicker"])
+<script type="text/javascript">
+$(function() {
+	var lgnContent =$(window).height() - $('h3').height()-40;
+	$('.lgnContent').css('height',lgnContent);
+	$('.boxContent').css('height',lgnContent-24);
+	$(window).resize(function() {
+	var lgnContent =$(window).height() - $('h3').height();
+	$('.lgnContent').css('height',lgnContent);
+	$('.boxContent').css('height',lgnContent-24);
+	});
+
+/*
+*下载操作手册
+*/
+$("#operationManual").on("click",function(){
+	window.location.href = '${rc.contextPath}/login/downloadOperationFile';
+});
+})
+</script>
+<script src="${rc.contextPath}/js/module/enterprise/entbusinessinfo/entbusinessinfoAdd.js"></script>
+
+
+</body>
+</html>

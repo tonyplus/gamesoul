@@ -1,0 +1,1860 @@
+﻿<head>
+	<style type="text/css">
+
+ p.MsoNormal
+	{margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";
+			margin-left: 0cm;
+			margin-right: 0cm;
+			margin-top: 0cm;
+		}
+	</style>
+</head>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">!<span 
+		style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">初始化名称空间</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>window.CurProject = 
+	window.CurProject || {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (window.CurProject.Common3x)
+	<span style="color:blue">throw</span> <span style="color:blue">new</span> Error(<span 
+		style="color:maroon">&#39;CurProject.Common </span></span>
+	<span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:
+NSimSun;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:NSimSun;mso-bidi-font-family:NSimSun;color:maroon;
+mso-font-kerning:0pt">类重复加载</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:NSimSun;mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:
+0pt">&#39;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;
+mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> uc = window.CurProject.Common3x =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>uc.dbing =
+	<span style="color:blue">function</span> (instance, method) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">return</span> <span style="color:blue">function</span> 
+	() {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">return</span> method.apply(instance, arguments);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">事件通用函数</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>uc.addHandler =
+	<span style="color:blue">function</span> (element, eventName, handler) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (element.addEventListener) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>element.addEventListener(eventName, handler, <span style="color:blue">
+	false</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">else</span> <span style="color:blue">if</span> 
+	(element.attachEvent) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>element.attachEvent(<span style="color:maroon">&#39;on&#39;</span> + eventName, 
+	handler);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>uc.ah = uc.addHandler;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">} ();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">!<span 
+		style="color:blue">function</span> (g) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">初始化名称空间</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>window.CurProject = 
+	window.CurProject || {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">整体</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (window.CurProject.Demo3)
+	<span style="color:blue">throw</span> <span style="color:blue">new</span> Error(<span 
+		style="color:maroon">&#39;CurProject.Demo3 </span></span>
+	<span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:
+NSimSun;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:NSimSun;mso-bidi-font-family:NSimSun;color:maroon;
+mso-font-kerning:0pt">类重复加载</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:NSimSun;mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:
+0pt">&#39;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;
+mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> dlist = window.CurProject.Demo3 =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">this</span>._masterElement = <span style="color:blue">
+	null</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> _dlist = <span style="color:blue">null</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> _openIframes = <span style="color:blue">new</span> 
+	Array();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>dlist.getOpenIframes =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">return</span> _openIframes;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">获取实例对象</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>dlist.getInstance =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> rtn = <span style="color:blue">null</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (_dlist == <span style="color:blue">null</span>) 
+	{<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>rtn = <span style="color:blue">new</span> window.CurProject.Demo3();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>_dlist = rtn;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>rtn = _dlist;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">return</span> rtn;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">创建分屏列表按钮</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>dlist.Create =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ScreenBtn = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBtn.className = <span style="color:maroon">&quot;fourth&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ScreenBox = document.createElement(<span 
+		style="color:maroon">&quot;input&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBox.type = <span style="color:
+maroon">&quot;checkbox&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBox.id = <span style="color:maroon">&quot;check&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBtn.appendChild(ScreenBox);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ScreenImg = document.createElement(<span 
+		style="color:maroon">&quot;img&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenImg.id = <span style="color:maroon">&quot;img&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenImg.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">平铺</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBtn.appendChild(ScreenImg);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ins = <span style="color:blue">new</span> 
+	window.CurProject.Demo3();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ck = g.dbing(ins, ins.dlistClick);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	g.ah(ScreenBox, <span style="color:maroon">&#39;click&#39;</span>, ck);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	ScreenBtn.appendChild(ScreenBox);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">return</span> ScreenBtn;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">创建代码按钮</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>dlist.BtnCreate =
+	<span style="color:blue">function</span> () {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> btnC = document.createElement(<span 
+		style="color:maroon">&quot;input&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	btnC.type = <span style="color:maroon">&quot;button&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	btnC.className = <span style="color:
+maroon">&quot;btnC&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	btnC.title = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">点击查看代码</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	btnC.value = <span style="color:maroon">&quot;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	btnC.id = <span style="color:maroon">&quot;btnC&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ins = <span style="color:blue">new</span> 
+	window.CurProject.Demo3();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ck = g.dbing(ins, ins.dlistScreenClick);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	g.ah(btnC, <span style="color:maroon">&#39;click&#39;</span>, ck);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">return</span> btnC;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">示例代码</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:darkgreen;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;
+	</span></span>
+	<span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:
+NSimSun;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:NSimSun;mso-bidi-font-family:NSimSun;color:darkgreen;
+mso-font-kerning:0pt">开始</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:NSimSun;mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:
+0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>initParms</span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">初始化</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:darkgreen;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;
+	</span>element</span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:
+NSimSun;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:NSimSun;mso-bidi-font-family:NSimSun;color:darkgreen;
+mso-font-kerning:0pt">父对象</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:NSimSun;mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:
+0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>model</span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">配置文件</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	dlist.prototype.initParms = <span style="color:blue">function</span> (element, 
+	model) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> headEmt = document.getElementsByTagName(<span 
+		style="color:maroon">&quot;head&quot;</span>)[0];<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	element.getTitleControl().addEventListener(<span style="color:maroon">&quot;click&quot;</span>, 
+	createAll, <span style="color:blue">false</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> linkEmt = document.createElement(<span 
+		style="color:maroon">&quot;link&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	linkEmt.href = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/Demo3.css&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	linkEmt.rel = <span style="color:maroon">&quot;stylesheet&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	linkEmt.type = <span style="color:maroon">&quot;text/css&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	headEmt.appendChild(linkEmt);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> de3 = <span style="color:blue">new</span> 
+	window.CurProject.Demo3.Create();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> Wb3 = <span style="color:blue">new</span> 
+	window.CurProject.Demo3.BtnCreate();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> ins = <span style="color:blue">new</span> 
+	window.CurProject.Demo3();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	element.appendChild(de3);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	element.appendChild(Wb3);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">示例代码</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:darkgreen;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;
+	</span></span>
+	<span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:
+NSimSun;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:NSimSun;mso-bidi-font-family:NSimSun;color:darkgreen;
+mso-font-kerning:0pt">结束</span><span lang="EN-US" style="font-size:9.5pt;
+font-family:NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">功能点击事件</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">function</span> createAll() {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> mdi = app.getWorkControl().getMdiControl();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	mdi.childrenClear();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> tempWd = 
+	app.getWorkControl().getMdiControl().createChildWindow();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> tempDiv = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.id = <span style="color:maroon">&quot;defaultPageAll&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.style.height = <span style="color:maroon">&quot;100%&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.position = <span style="color:maroon">&quot;absolute&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.top = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.bottom = <span style="color:
+maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.right = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.left = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempDiv.innerHTML = <span style="color:maroon">&quot;&lt;iframe id=&#39;defPageALL&#39; 
+	src=&#39;http://117.158.128.172:8188/WBS/monitor/toMain.do&#39; style=&#39;width: 100%; 
+	height: 100%;&#39;&gt;&lt;/iframe&gt;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempWd.getContainer().appendChild(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempWd.setCaption(<span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">系统首页</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	tempWd.show();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">分屏列表点击事件</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	dlist.prototype.dlistClick = <span style="color:blue">function</span> (element, 
+	model) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> btn = document.getElementById(<span 
+		style="color:maroon">&quot;check&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> imgBTN = document.getElementById(<span 
+		style="color:maroon">&quot;img&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> dlistArray = 
+	window.CurProject.Demo3.getOpenIframes();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> isload = <span style="color:blue">false</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> mdi = app.getWorkControl().getMdiControl();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">for</span> (<span style="color:blue">var</span> i = 0; 
+	i &lt; dlistArray.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> temp = 
+	document.getElementById(dlistArray[i].id);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">if</span> (temp) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>isload = <span style="color:
+blue">true</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (isload) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">if</span> (btn.checked ==
+	<span style="color:blue">true</span>) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">四分屏列表</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.Tile);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>} <span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">平铺</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.TileVertical);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.childrenClear();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> arr = <span style="color:blue">new</span> 
+	Array();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj1 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二级泵站</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEJBZ.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj2 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二期澄清池</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEQCQC.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj3 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj3.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二期滤池</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj3.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEQLC.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj4 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj4.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">鼓风机房</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj4.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toGFJF.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj1);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj2);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj3);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj4);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">for</span> (<span style="color:blue">var</span> 
+	i = 0; i &lt; arr.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempWd = 
+	app.getWorkControl().getMdiControl().createChildWindow();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempDiv = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.id = <span style="color:maroon">&quot;dlistFrm&quot;</span> + i;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.height = <span style="color:maroon">&quot;100%&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.position = <span style="color:maroon">&quot;absolute&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.top = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.bottom = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.right = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.left = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.innerHTML = <span style="color:maroon">&quot;&lt;iframe id=&#39;ifr&quot;</span> + 
+	i + <span style="color:maroon">&quot;&#39; src=&#39;&quot;</span> + arr[i].Url +
+	<span style="color:maroon">&quot;&#39; style=&#39;width: 100%; height: 100%;&#39;&gt;&lt;/iframe&gt;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.getContainer().appendChild(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.setCaption(arr[i].Caption);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.show();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>dlistArray.push(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">if</span> (btn.checked ==
+	<span style="color:blue">true</span>) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">四分屏列表</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.Tile);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>} <span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">平铺</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.TileVertical);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">return</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	} <span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.childrenClear();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> arr = <span style="color:blue">new</span> 
+	Array();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj1 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二级泵站</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEJBZ.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj2 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二期澄清池</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEQCQC.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj3 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj3.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">二期滤池</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj3.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toEQLC.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj4 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj4.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">鼓风机房</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj4.Url = <span style="color:maroon">
+	&quot;http://117.158.128.172:8188/WBS/monitor/toGFJF.do&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj1);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj2);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj3);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj4);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">for</span> (<span style="color:blue">var</span> 
+	i = 0; i &lt; arr.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempWd = 
+	app.getWorkControl().getMdiControl().createChildWindow();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempDiv = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.id = <span style="color:maroon">&quot;dlistFrm&quot;</span> + i;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.height = <span style="color:maroon">&quot;100%&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.position = <span style="color:maroon">&quot;absolute&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.top = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.bottom = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.right = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.left = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.innerHTML = <span style="color:maroon">&quot;&lt;iframe id=&#39;ifr&quot;</span> + 
+	i + <span style="color:maroon">&quot;&#39; src=&#39;&quot;</span> + arr[i].Url +
+	<span style="color:maroon">&quot;&#39; style=&#39;width: 100%; height: 100%;&#39;&gt;&lt;/iframe&gt;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.getContainer().appendChild(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.setCaption(arr[i].Caption);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.show();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	dlistArray.push(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">if</span> (btn.checked ==
+	<span style="color:blue">true</span>) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">四分屏列表</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.Tile);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>} <span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>imgBTN.src = <span style="color:maroon">
+	&quot;DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">平铺</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.TileVertical);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:darkgreen">//</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:darkgreen;mso-font-kerning:0pt">代码点击事件</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	dlist.prototype.dlistScreenClick = <span style="color:blue">function</span> 
+	(element, model) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> btn = document.getElementById(<span 
+		style="color:maroon">&quot;check&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> imgBTN = document.getElementById(<span 
+		style="color:maroon">&quot;img&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> dlistArray = 
+	window.CurProject.Demo3.getOpenIframes();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> isload = <span style="color:blue">false</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> app = window.Mirs.Application.getInstance();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> mdi = app.getWorkControl().getMdiControl();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">for</span> (<span style="color:blue">var</span> i = 0; 
+	i &lt; dlistArray.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> temp = 
+	document.getElementById(dlistArray[0].id);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">if</span> (temp) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>isload = <span style="color:
+blue">true</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">if</span> (isload) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.childrenClear();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> arr = <span style="color:blue">new</span> 
+	Array();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj1 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">多窗口视频监控效果</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Url = <span style="color:maroon">
+	&quot;../MirsSite/DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">多窗口视频监控</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj1);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj2 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Caption = <span style="color:maroon">&quot;JS</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">源代码</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Url = <span style="color:maroon">
+	&quot;../MirsSite/DevelopmentCase/MonitorLayout/Demo3code.htm&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj2);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">for</span> (<span style="color:blue">var</span> 
+	i = 0; i &lt; arr.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempWd = 
+	app.getWorkControl().getMdiControl().createChildWindow();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>
+	<span style="color:blue">var</span> tempDiv = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.id = <span style="color:maroon">&quot;dlistFrm&quot;</span> + i;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.height = <span style="color:maroon">&quot;100%&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.backgroundColor = <span style="color:maroon">&quot;#fff&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.position = <span style="color:maroon">&quot;absolute&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.top = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.bottom = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.right = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.left = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.innerHTML = <span style="color:maroon">&quot;&lt;iframe id=&#39;ifr&quot;</span> + 
+	i + <span style="color:maroon">&quot;&#39; src=&#39;&quot;</span> + arr[i].Url +
+	<span style="color:maroon">&quot;&#39; style=&#39;width: 100%; height: 100%;&#39;&gt;&lt;/iframe&gt;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.getContainer().appendChild(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.setCaption(arr[0].Caption);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>tempWd.show();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>dlistArray.push(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.Tile);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">return</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	} <span style="color:blue">else</span> {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.childrenClear();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> arr = <span style="color:blue">new</span> 
+	Array();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj1 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Caption = <span style="color:maroon">&quot;</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">多窗口视频监控效果</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj1.Url = <span style="color:maroon">
+	&quot;../MirsSite/DevelopmentCase/MonitorLayout/images/</span></span><span style="font-size:9.5pt;font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;
+mso-bidi-font-family:NSimSun;color:maroon;mso-font-kerning:0pt">多窗口视频监控</span><span 
+		lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">.png&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj1);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> obj2 = {};<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Caption = <span style="color:maroon">&quot;JS</span></span><span style="font-size:9.5pt;
+font-family:宋体;mso-ascii-font-family:NSimSun;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:NSimSun;mso-bidi-font-family:
+NSimSun;color:maroon;mso-font-kerning:0pt">源代码</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+color:maroon;mso-font-kerning:0pt">&quot;</span><span lang="EN-US" style="font-size:9.5pt;font-family:NSimSun;mso-bidi-font-family:NSimSun;
+mso-font-kerning:0pt">;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>obj2.Url = <span style="color:maroon">
+	&quot;../MirsSite/DevelopmentCase/MonitorLayout/Demo3code.htm&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>arr.push(obj2);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">for</span> (<span style="color:blue">var</span> 
+	i = 0; i &lt; arr.length; i++) {<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempWd = 
+	app.getWorkControl().getMdiControl().createChildWindow();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span style="color:blue">var</span> tempDiv = document.createElement(<span 
+		style="color:maroon">&quot;div&quot;</span>);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.id = <span style="color:maroon">&quot;dlistFrm&quot;</span> + i;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.height = <span style="color:maroon">&quot;100%&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.style.backgroundColor = <span style="color:maroon">&quot;#fff&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.position = <span style="color:maroon">&quot;absolute&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.top = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.bottom = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.right = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.left = <span style="color:maroon">&quot;0px&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempDiv.innerHTML = <span style="color:maroon">&quot;&lt;iframe id=&#39;ifr&quot;</span> + 
+	i + <span style="color:maroon">&quot;&#39; src=&#39;&quot;</span> + arr[i].Url +
+	<span style="color:maroon">&quot;&#39; style=&#39;width: 100%; height: 100%;&#39;&gt;&lt;/iframe&gt;&quot;</span>;<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.getContainer().appendChild(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.setCaption(arr[i].Caption);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>tempWd.show();<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>dlistArray.push(tempDiv);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>mdi.setLayoutMdi(mdi.MdiLayout.Tile);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">
+	<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt">} (CurProject.Common3x);<o:p></o:p></span></p>
+<p align="left" class="MsoNormal">
+	<span lang="EN-US" style="font-size:9.5pt;font-family:
+NSimSun;mso-bidi-font-family:NSimSun;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal">
+	<span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+
+

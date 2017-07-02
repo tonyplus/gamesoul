@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link id="OaTheme" href="CSS/ThemeBlack.css" rel="stylesheet" />
+	<script>
+	    window.onload = function () {
+	        setCSS();
+	        var getEq = getEquipmentType();
+	        //ios系统兼容写法
+			if (getEq == "IPAD" || getEq == "IPHONE") {
+				window.addEventListener("orientationchange", setBody, false);
+				setBody();
+			}
+			window.addEventListener("hashchange", setCSS);
+		}
+        //设置样式
+	    function setCSS() {
+	        var styleCss = document.getElementById("OaTheme");
+	        var s = window.location.hash;
+	        var start = s.indexOf('MirsThemeName') + 14;
+	        var themename = s.substring(start);
+	        if (themename == "Landscape") {
+	            styleCss.href = "CSS/ThemeBlue.css";
+	        }else   if (themename == "Hot") {
+	            styleCss.href = "CSS/ThemeRed.css";
+	        } else  if (themename == "GreenEyeProtection") {
+	            styleCss.href = "CSS/ThemeGreen.css";
+	        } else {
+	            styleCss.href = "CSS/ThemeBlack.css"; 
+	        }
+	        //alert(themename);
+	    }
+
+		function setBody() {
+			var tAg = window.orientation;			
+			if (tAg == 0) {
+				document.body.style.width = window.screen.availWidth + "px";
+				
+			} else{
+				document.body.style.width = window.screen.availHeight + "px";				
+			}		
+		}
+
+        //判断设备类型
+		function getEquipmentType() {
+			var sUserAgent = navigator.userAgent.toLowerCase();
+			var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+			var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+			var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+			var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+			var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+			var bIsAndroid = sUserAgent.match(/android/i) == "android";
+			var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+			var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+			//|| bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM
+			var rtn = null;
+			if (bIsIpad) {
+				rtn = "IPAD";
+			}
+			if (bIsIphoneOs) {
+				rtn = "IPHONE";
+			}
+			if (bIsMidp) {
+				rtn = bIsMidp;
+			}
+			if (bIsUc7) {
+				rtn = bIsUc7;
+			}
+			if (bIsUc) {
+				rtn = bIsUc;
+			}
+			if (bIsAndroid) {
+				rtn = bIsAndroid;
+			}
+			if (bIsCE) {
+				rtn = bIsCE;
+			}
+			if (bIsWM) {
+				rtn = bIsWM;
+			}
+			return rtn;
+		}
+	</script>
+</head>
+<body >
+    <div class="container-fluid" >
+        <div class="row OaToolBar">
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT1">
+                        <div class="OaCornerMark">12</div>
+                    </div>
+                    <div>我的消息</div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT2"></div>
+                    <div>我的日志</div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT3">
+                        <div class="OaCornerMark">5</div>
+                    </div>
+                    <div>我的邮件</div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT4">
+                        <div class="OaCornerMark">4</div>
+                    </div>
+                    <div>流程管理</div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT5"></div>
+                    <div>文档管理</div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="OaToolItem">
+                    <div class="OaItemImg OaImgT6"></div>
+                    <div>账户设置</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft">
+                            <img src="images/icon/icon1.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>通知公告</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle1" href="#">关于重要领导来司参观的通知</a>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">周综合例会会议纪要20151026</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">关于我司篮球队受邀参加高新区举办的2015篮球赛的通知</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">《威风》第三十期稿费</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">关于领取第30期《威风》杂志的通知</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">关于开展2015年度存货盘点工作的通知</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle1"><a href="#">关于规范并统一考勤截止日以及工资核算周期的通知</a></div>
+                            <div class="OaNewsDate">2015-11-4</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5 OaRigthDiv">
+                <div class="OaPromptBar">
+                    <div class="OaPromptTitle">
+                        <div class="FloatRight" style="margin-right: 10px;">
+                            沈阳：<img src="images/weather.png" style="width:25px;margin-top:-2px;" />多云4℃-18℃
+                        </div>
+                    </div>
+                    <div class="OaPromptContent">
+                        <div>今日值班：王朝、马汉</div>
+                        <div style="margin-top: 10px; color: #fa700b;">今日提醒：</div>
+                        <div style="margin-left: 50px;">
+                            1、工作日志【未写】<br />
+                            2、下午去银行汇款<br />
+                            3、下午5:00会议室开会讨论项目
+                        </div>
+                        <div style="margin-top: 10px;"><span style="color: #f32d2c;">催办信息：</span>无</div>
+                    </div>
+                   <!-- <div style="background-image:url('../OaTheme/images/bg_work.png');height:159px;width:260px;background-repeat:no-repeat;position:absolute;background-color:red;bottom:0px;right:15px;"></div>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon2.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>集团新闻</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">助力燃气信息化，保障燃气安全运营</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">畅通郑州，我们共同在行动！</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">发展核心技术 助力安全生产 </a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汇聚我们的爱，用爱照亮希望！</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威有爱 情系芦山！ </a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子投资沈阳金建签约仪式隆重举行 </a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">科技部部长万钢到汉威电子调研参观</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子企业新闻</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 OaMidDiv">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon3.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>汉威电子媒体报道</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">汉威电子2015年三季报点评:业绩保持快速增长...</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子(300007):业绩保持快速增长</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:2015年第三季度报告披露提示性公告...</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:第三届监事会第十二次会议决议公告...</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:第三届董事会第十六次会议决议公告...</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:2015年第三季度报告全文</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:拟设立厦门子公司</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子:关于设立厦门分公司的公告</a></div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon4.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>传感器知识</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">传感器应用与物联网 携手共创美好未来</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">不打像素战:Galaxy S7将配1/2英寸传感器</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">美研发新型呼吸传感器 能快速发出机舱缺氧警告</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">新型呼吸传感器能快速发出机舱缺氧警告</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">LED照明和物联网最小传感器:拥抱人工眼技术</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">三星GALAXY S7或配12MP镜头 1/2英寸传感器</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">罗克韦尔自动化的 IO-Link 主站和传感器引领智能自动化...</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">耐洗压力传感器惊现德国实验室</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon5.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>行业资讯</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">地下管网安全的血色警示</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">“地气”太可怕吗？</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">地理信息——跨界融合 寻求突破 </a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">《可燃气体探测器》国标修订工作组会议在郑州举行</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">河北省赵县一化工厂发生爆炸,17人遇难46人受伤</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">祈福遇难者，守护生命，科技助力----西安南郊一小吃店发生爆炸 致9人遇难37人伤</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">永城一加气站爆炸 事故致2死4伤</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">山东郯城化工厂氯气泄漏，伤者共125人</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">广西一钢厂煤气泄露上百人中毒</a></div>
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">河北沧州一化工厂有毒气体泄漏 伤亡不明</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 OaMidDiv">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon6.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>党建新闻</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">省市委联合第五督导组莅临汉威电子检查指导</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子党支部庆七一兰考行</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子党支部到广安生物参观交流非公企业党建活动</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子支部委员会党的群众路线教育实践活动动员大会胜利召开</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">党的群众路线教育实践活动应知应会内容200问</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">市委常委统战部长王跃华一行莅临汉威参观调研</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子支部委员会换届选举大会胜利召开</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子党支部服务汉威冬季长跑比赛</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子预备党员转正仪式</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子支部委员会党的群众路线教育实践活动动员大会胜利召开</a></div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="OaNorBar">
+                    <div class="OaNorTitle">
+                        <div class="FloatLeft"><img src="images/icon/icon7.png" style="margin-top:-3px;height:20px;margin-right:5px;"/>子公司新闻</div>
+                        <div class="FloatRight OaMore">更多>></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="OaNewsTitle2" href="#">就在七夕，让红包和福利一直飞！</a>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">热烈庆祝郑州创威煤安科技有限公司成立6周年</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">超越巅峰、共创辉煌拓展训练</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子公司半年报点评:物联网平台优势逐渐发力,发展潜力巨大</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">11.22青岛油气管线爆炸事件带给我们的思考</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">从“珍珠”到“项链” 掘金物联网蓝海</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">汉威电子：科技创新为质量安全加锁</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">《经济视点报》专访汉威电子董事会秘书刘瑞玲——优雅女强人</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">郑州晚报专访汉威电子董事长任红军</a></div>
+
+                        </li>
+                        <li>
+                            <div class="OaNewsTitle2"><a href="#">紧跟物联网 汉威电子静待市场空间爆发</a></div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

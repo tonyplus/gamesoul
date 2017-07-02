@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastwork.module.system.dao.SysRoleMapper" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="com.fastwork.module.system.entity.SysRole" >
+	<result column="roleid" property="roleid" jdbcType="VARCHAR" />
+	<result column="rolename" property="rolename" jdbcType="VARCHAR" />
+	<result column="notes" property="notes" jdbcType="VARCHAR" />
+</resultMap>
+       
+<!-- sys_role table all fields -->
+<sql id="Base_Column_List" >
+	 roleid,rolename,note
+</sql>
+   
+</mapper>   

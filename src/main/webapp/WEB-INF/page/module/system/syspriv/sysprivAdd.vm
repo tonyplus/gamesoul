@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>权限管理</title>
+	#include_css(["bootstrap","jqgrid","jqueryui","main","validate","ztree"])
+	#include_html5()
+</head>
+
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="privform" name="privform" class="form-horizontal" >	
+		<input type="hidden" name="privid" id="privid" value="$!{sysPriv.privid}"/>	
+		<table class="zwTable">
+			<tr>
+				<td align="right"><label for="privname">权限名称:&nbsp;<font style="color:red">*</font></label></td>
+				<td><input type="text" id="privname" name="privname" value="$!{sysPriv.privname}" class="form-control"  maxlength="25"></td>
+				<td align="right"><label for="privcode">权限编码:&nbsp;<font style="color:red">*</font></label></td>
+				<td><input type="text" id="privcode" name="privcode" value="$!{sysPriv.privcode}" class="form-control"  maxlength="50"></td>
+			</tr>
+			
+			<tr>
+				<td align="right"><label for="privlevel">权限级别:&nbsp;<font style="color:red">*</font></label></td>
+				<td><select id="privlevel" name="privlevel"  selectvalue="${sysPriv.privlevel}" class="form-control"></select></td>
+				<td align="right"><label for="usertype">授权人类型:&nbsp;<font style="color:red">*</font></label></td>
+				<td><select id="usertype" name="usertype"  selectvalue="${sysPriv.usertype}" class="form-control" disabled ></select></td>
+			</tr>
+			
+			<tr>
+				<td align="right"><label for="parentname">父权限:&nbsp;<font style="color:red">*</font></label></td>
+				<td><input id="parentname" name="parentname" class="form-control" type="text" selectname="parentid"  selectwidth="230px" selectheight="200px;" rootclick="true"/></td>
+				<td align="right"><label for="privurl">权限链接:&nbsp;</label></td>
+				<td><input type="text" id="privurl" name="privurl" value="$!{sysPriv.privurl}" class="form-control"  maxlength="100"></td>
+			</tr>
+			
+			<tr>
+				<td align="right"><label for="privimg">权限图片:&nbsp;</label></td>
+				<td><input type="text" id="privimg" name="privimg" value="$!{sysPriv.privimg}" class="form-control" maxlength="50"></td>
+				<td align="right"><label for="privimg">链接类型:&nbsp;</label></td>
+				<td>
+					<div class="checkbox">
+					<label><input type="radio" name="privtype" style="width:25px;" value="1" checked >内部链接</label>
+					<label><input type="radio" name="privtype" style="width:25px;" value="2"  >外部链接</label>
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right"><label for="ordernum">排序:&nbsp;</label></td>
+				<td><input type="text" id="ordernum" name="ordernum" value="$!{sysPriv.ordernum}" class="form-control" maxlength="4"></td>
+    			<td align="right"><label for="note">备注:&nbsp;</label></td>
+    			<td><textarea class="form-control" rows="3"  maxlength="500" id="note" name="note">$!{sysPriv.note}</textarea></td>
+    		</tr>
+		</table>
+	    <div class="alginCenter">
+		    <button type="submit" class="backBtn"><span>保存</span></button>
+            <button type="button" class="backBtn" onclick="parent.closeWin()"><span>返回</span></button>
+		</div>
+  </form>
+</div>
+#include_js(["jquery","bootstrap","validate","ztree","select_option","select_tree"])
+<script src="${rc.contextPath}/js/module/system/syspriv/sysprivAdd.js"></script>
+</body>
+</html>

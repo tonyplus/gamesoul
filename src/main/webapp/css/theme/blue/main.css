@@ -1,0 +1,81 @@
+
+.ptop {
+	background:-moz-linear-gradient(top,#d3e8fc,#cce2f9);
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#d3e8fc),to(#cce2f9));
+	background:-o-linear-gradient(top,#d3e8fc,#cce2f9);
+	border-bottom-color: #a6c1e0;
+}
+.tab ul li {
+	background-color: #488dc1;
+	color: #82bce7;
+	border-color: #3d7eb3;
+}
+.tab ul li:first-child {
+	border-right-color: #559ed5;
+}
+.tab ul li.active {
+	color: #fff;
+}
+.tab ul li.active:first-child {
+	border-right-color: #2a5f93;
+}
+.tab ul li:last-child {
+	border-left-color: #559ed5;
+}
+
+.tab ul li.active:last-child {
+	border-left-color: #2a5f93;
+}
+.pcontent {
+	background-color: #528dcf;
+}
+.vi {
+	background-image: url(../../../images/theme/blue/main/sqt.png);
+}
+.pcontainer {
+	background-color: #9ac5f0;
+}
+.pcheck {
+	background-color: #fff;
+}
+.year li,.quarter li {
+	background-color: #93b6e0;
+	color: #042b56;
+}
+.lbl {
+	color: #042b56;
+}
+.year li.cur,.quarter li.cur {
+	background-color: #457cbf;
+	color: #fff;
+}
+.search 
+{
+	background-color: #A2DA79;
+	border: none;
+	color: #333333;
+}
+.checkbtn {
+	color: #042b56;
+}
+.checkbtn span {
+	background-image:url(../../../images/theme/blue/main/pbtn.png);
+}
+
+.ptable {
+	background-color: #fff;
+
+}
+.ptable thead th {
+	background:-moz-linear-gradient(top,#d5eafc,#cde2f3);
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#d5eafc),to(#cde2f3));
+	background:-o-linear-gradient(top,#d5eafc,#cde2f3);
+	border-bottom-color: #bed2e3;
+	color: #042b56;
+}
+.ptable tbody tr td {
+	border-right-color: #bed2e3;
+}
+.ptable tbody tr:nth-child(even) {
+	background-color: #e4ebf2;
+}

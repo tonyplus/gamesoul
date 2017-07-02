@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>app版本信息添加</title>
+	#include_css(["bootstrap","font","jqgrid","jqueryui","layer","main","validate","date","fileinput"])
+	#include_html5()
+	<style >
+		.ui-jqgrid .ui-jqgrid-hbox {
+			height: auto;
+		}
+    </style>
+</head>
+
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="sysappversionform" name="sysappversionform" class="form-horizontal" >	
+		<input type="hidden" id="token" name="token" value="$!{token}"/>
+		<input type="hidden" name="appid" id="appid" value="$!{sysAppVersion.appid}"/>
+		<input type="hidden" name="appurl" id="appurl" value="$!{sysAppVersion.appurl}"/>
+		<table class="zwTable">
+			<tr>
+				<td align="right"><label for="appname">app名称:&nbsp;<font style="color:red">*</font></label></td>
+				<td><input type="text" id="appname" name="appname" value="$!{sysAppVersion.appname}" class="form-control" maxlength="16"></td>
+				<td align="right"><label for="appversion">app版本:&nbsp;<font style="color:red">*</font></label></td>
+				<td><input type="text" id="appversion" name="appversion" value="$!{sysAppVersion.appversion}" class="form-control" maxlength="10"></td>
+			</tr>
+			<tr>
+				<td align="right"><label for="onlinetime">发布时间:&nbsp;<font style="color:red">*</font></label></td>
+				<td>
+					<input class="form-control" size="16" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" id="onlinetime" name="onlinetime" type="text" value="$!date.format('yyyy-MM-dd HH:mm:ss',$!sysAppVersion.onlinetime)" readonly>
+				</td>
+				<td align="right"><label for="appdesc">app描述:&nbsp;</label></td>
+				<td>
+					<textarea class="form-control" id="appdesc" name="appdesc" rows="2" maxlength="333">$!{sysAppVersion.appdesc}</textarea>
+				</td>
+			</tr>
+			<tr>
+                <td align="right"><label for="attach">app:&nbsp;<font style="color:red">*</font></label></td>
+				<td colspan="3" id="tdattach">
+					<div class="fileafter">
+						<div id="myfile" filename="$!{sysAppVersion.appname}" fileurl="${rc.contextPath}/system/sysappversion/download/$!{sysAppVersion.appid}"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="isonline">是否发布:&nbsp;<font style="color:red">*</font></label></td>
+				<td>
+					<select id="isonline" name="isonline"  selectvalue="${sysAppVersion.isonline}" class="form-control text-center"></select>
+				</td>
+				<td align="right"><label for="apptype">app类型:&nbsp;<font style="color:red">*</font></label></td>
+				<td>
+					<select id="apptype" name="apptype"  selectvalue="${sysAppVersion.apptype}" class="form-control text-center"></select>
+				</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="note">备注:&nbsp;</label></td>
+				<td colspan="3">
+					<textarea class="form-control" id="note" name="note" rows="3" maxlength="333">$!{sysAppVersion.note}</textarea>
+				</td>
+            </tr>
+		</table>
+		<div class="alginCenter" style="margin-bottom:5px;">
+		    <button type="submit" class="backBtn">保存</button>
+            <button type="button"  class="backBtn" onclick="parent.closeWin()"><span>返回</span></button>
+    	</div>
+	</form>
+</div>
+
+#include_js(["jquery","bootstrap","validate","select_option","datepicker","ajaxfileupload","fileinput"])
+<script src="${rc.contextPath}/js/module/game/gameinfo/gameinfoAdd.js"></script>
+</body>
+</html>

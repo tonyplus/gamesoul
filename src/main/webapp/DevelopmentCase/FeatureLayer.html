@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>FeatureLayer</title>
+
+    <link rel="stylesheet" type="text/css" href="http://151.1.3.210/arcgis_3.18/library/3.18/3.18/esri/themes/calcite/dijit/calcite.css" />
+    <link rel="stylesheet" type="text/css" href="http://151.1.3.210/arcgis_3.18/library/3.18/3.18/esri/themes/calcite/esri/esri.css" />
+    <script src="http://151.1.3.210/arcgis_3.18/library/3.18/3.18/init.js"></script>
+
+    <!-- <link rel="stylesheet" href="http://151.1.3.210/arcgis_js_api_4.0/library/4.0/4.0/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="http://151.1.3.210/arcgis_js_api_4.0/library/4.0/4.0/esri/css/main.css" />
+    <script src="http://151.1.3.210/arcgis_js_api_4.0/library/4.0/4.0/init.js"></script>-->
+
+
+    <style>
+        html, body, #map {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        var map;
+        var urlMap = "http://123.160.220.35:29601/ArcGIS/rest/services/%e9%ab%98%e6%96%b0_%e5%ba%95%e5%9b%be/MapServer";
+        require([
+            "esri/map",
+            "esri/layers/FeatureLayer",
+            "esri/layers/ArcGISTiledMapServiceLayer",
+            "esri/layers/ArcGISDynamicMapServiceLayer",
+            "esri/symbols/TextSymbol",
+            "esri/layers/LabelClass",
+            "esri/Color",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/symbols/SimpleFillSymbol",
+            "esri/renderers/SimpleRenderer",
+            "dojo/domReady!"
+        ],
+          function (
+            Map,
+            FeatureLayer,
+            ArcGISTiledMapServiceLayer,
+            ArcGISDynamicMapServiceLayer,
+            TextSymbol,
+            LabelClass,
+            Color,
+            SimpleLineSymbol, SimpleFillSymbol, SimpleRenderer
+          ) {
+              map = new Map("map", {
+                  showLabels: true
+              });
+              var tiled = new ArcGISTiledMapServiceLayer(urlMap);
+              map.addLayer(tiled);
+
+              // create a renderer for the states layer to override default symbology
+              var statesColor = new Color("red");
+              var statesLine = new SimpleLineSymbol("solid", statesColor, 1.5);
+              var statesSymbol = new SimpleFillSymbol("solid", statesLine, null);
+              var statesRenderer = new SimpleRenderer(statesSymbol);
+
+              var statesUrl = "http://123.160.220.35:29601/ArcGIS/rest/services/%E9%AB%98%E6%96%B0_%E5%BA%95%E5%9B%BE/MapServer/66";
+              var states = new FeatureLayer(statesUrl, {
+                  id: "f1",
+                  outFields: ["*"]
+              });
+              states.setRenderer(statesRenderer);
+
+              var statesLabel = new TextSymbol().setColor(statesColor);
+              statesLabel.font.setSize("14pt");
+              statesLabel.font.setFamily("arial");
+              statesLabel.setHaloColor(new esri.Color([255, 255, 255])).setHaloSize(1);
+
+              var json = {
+                  "labelExpressionInfo": { "value": "{name}" }
+              };
+
+              //create instance of LabelClass (note: multiple LabelClasses can be passed in as an array)
+              var labelClass = new LabelClass(json);
+              labelClass.symbol = statesLabel; // symbol also can be set in LabelClass' json
+              states.setLabelingInfo([labelClass]);
+              map.addLayer(states);
+
+          });
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+</html>

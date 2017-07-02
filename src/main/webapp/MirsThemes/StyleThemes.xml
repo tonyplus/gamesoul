@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MirsStyleThemeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MirsStyleTheming>
+    <ThemeFileName>Default</ThemeFileName>
+    <ThemeTitle>默认也是一种选择</ThemeTitle>
+  </MirsStyleTheming>
+  <MirsStyleTheming>
+    <ThemeFileName>Landscape</ThemeFileName>
+    <ThemeTitle>深蓝风景</ThemeTitle>
+  </MirsStyleTheming>
+  <MirsStyleTheming>
+    <ThemeFileName>Hot</ThemeFileName>
+    <ThemeTitle>热力无限</ThemeTitle>
+  </MirsStyleTheming> 
+  <MirsStyleTheming>
+    <ThemeFileName>GreenEyeProtection</ThemeFileName>
+    <ThemeTitle>绿野仙踪</ThemeTitle>
+  </MirsStyleTheming>
+</MirsStyleThemeList>

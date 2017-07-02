@@ -1,0 +1,48 @@
+﻿{
+  "MirsStyleTheming": {
+    "RootBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "NavBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "WorkBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "WorkTitleBarBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "MdiBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "ChildWindowBackground": {
+      "A": "255",
+      "R": "34",
+      "G": "34",
+      "B": "34",
+	  "rgb":"#3300FF"
+    },
+    "ThemeFileName": "Landscape",
+    "ThemeTitle": "深蓝风景"
+  }
+}

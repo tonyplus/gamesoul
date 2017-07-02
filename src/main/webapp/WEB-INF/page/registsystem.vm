@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>系统激活</title>
+	#include_css(["jquery","jqueryui","bootstrap","layer","main","validate","ztree"])
+	<link href="${rc.contextPath}/css/common/register.css"  rel="stylesheet" type="text/css" />
+	#include_html5()
+	 <style>
+	.checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {margin-left: 3px;}
+	.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"] {top:5px;}
+	.longitudeDiv { width:50%; float: left;}
+	.latitudeDiv { width:50%; float: left;}
+	</style>
+</head>
+<style>
+		.h3 {
+			text-align: center;
+			color: #fff;
+		}
+	</style>
+</head>
+<body style="background-color: #1b79c1;">
+	<h3 class="h3">系统激活</h3>
+
+	<section>
+		<div class="lgnContent">
+         <div class="boxContent" style="background-color: #fff;  width: 920px;margin: 0 auto;overflow:auto;">
+			<fieldset >
+				<legend>系统激活</legend>
+				<table class="tableStyle styleTable">
+                    <tbody>
+					<tr>
+            			<td align="right"><label for="directortypeid">名称</td>
+            			<td colspan="3">
+							<input id="registname" name="registname" class="form-control" type="text" readonly  value="$!registname" />
+						</td>
+            		</tr>
+					<tr>
+            			<td align="right"><label for="deoid">激活码</td>
+            			<td colspan="3">
+							<input id="registcode" name="registcode" class="form-control" type="text"  value="$!registcode" />
+						</td>
+            		</tr>
+					<tr>
+            			<td align="right"><label for="deoid">有效期</td>
+            			<td colspan="3">
+							<input id="registdate" name="registdate" class="form-control" type="text"  value="$!registdate" readonly  />
+						</td>
+            		</tr>
+                    </tbody>
+                </table>
+    		</fieldset >
+    		<div class="alginCenter">
+    		    <button class="backBtn" id="saveBtn" onclick="saveBtn();"><span>激活</span></button>
+    		</div>
+        </div>
+	</div>
+	</section>
+	
+#include_js(["jquery","jqueryui","bootstrap"])
+<script>
+	function saveBtn(){
+        	var registcode=$('#registcode').val();
+        	if(!registcode){
+        		alert("请输入激活码");//弹出提示信息
+        		return false;
+        	}
+        	$.ajax({
+        		type : 'post',
+        		url : BASE_URL+'/registsave',
+        		cache : false,
+        		dataType : 'json',
+        		data : {registcode:registcode},
+        		global : false,
+        		success : function(json) {
+        			if(json.success==true){
+        				alert(json.msg);//弹出提示信息
+						top.location.href='${rc.contextPath}/login/'
+        			}else{
+        				alert(json.msg);
+        			}
+        		},
+        		error : function() {
+        			alert("保存失败");
+        		}
+        	});
+        }	
+	
+</script>
+
+</body>
+</html>

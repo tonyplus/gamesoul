@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>未授权页面</title>
+	#include_html5()
+</head>
+<body>
+    <div style="width:596px;margin: 0 auto;margin-top: 6%;">
+    <img alt="未授权" src="${rc.contextPath}/images/theme/blue/login/error.jpg" title="未授权">
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册成功</title>
+	#include_css(["bootstrap"])
+	#include_html5()
+<style >
+</style>
+</head>
+</head>
+<body style="background-color: #1b79c1;">
+	<div style="background-repeat: no-repeat;position: relative;width:920px;margin:0 auto;height: 300px;margin-top:10%;">
+        <center style="vertical-align:middle;">
+    		<img src="${rc.contextPath}/images/theme/blue/login/zccg.png" style="vertical-align:middle;"/>
+		</center>
+		<!--
+		<div style="position: absolute;left: 40%;bottom: 20px;">
+        	 <font size=2>你已经成功注册企业，<span id="jump">3</span> 秒后自动跳转到企业登陆界面。</font> 
+    	</div>
+		-->
+		<div style="position: absolute;top: 56%;left: 40%;">
+            <font size=4>登陆账号：</font><font size=5 color="red">$!{entinfo.entname}</font><br />
+			<font size=4>登陆密码：</font><font size=5 color="red">123456</font><br />
+			<font size=4>企业地址：</font><font size=5 color="red">$!{entinfo.address}</font><br />
+			<font size=4>行业主管部门：</font><font size=5 color="red">$!{entinfo.industryorgname}</font>
+    	</div>
+		<div style="position: absolute;top: 126%;left: 30%;">
+			 <font size=2>温馨提示:</font><br />
+			 <font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				请保存该页面账号信息，<a onclick="ok();" style="cursor: pointer;">点我跳转到登陆页面</a></font><br />
+             <font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				您的账号暂未激活，请等待管理员审核！</font><br />
+    	</div>
+	</div>
+    	
+
+</body>
+<script language="JavaScript">
+ function ok(){
+	window.location.href="${rc.contextPath}";
+ }
+  <!--  
+ 自动跳转
+ window.setTimeout("ok();",5000);
+ function countDown(secs){
+       jump.innerText=secs;
+       if(--secs>0)
+          setTimeout( "countDown(" +secs+ ")" ,1000);
+    }
+    countDown(5);
+	-->
+</script>
+
+</html>

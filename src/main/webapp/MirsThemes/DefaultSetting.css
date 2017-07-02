@@ -1,0 +1,1472 @@
+/*蓝色：#1983F9
+橘黄色：#F4C60E*/
+
+/*
+开发时间：2015-5-14 11:15:25
+开发人员：史家欢
+*/
+
+@charset "utf-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.displaynone {
+    display: none;
+}
+
+.displayblock {
+    display: block;
+}
+
+.mirsRootPanel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 440px;
+    min-width: 280px;
+    font-family: "Microsoft YaHei";
+    overflow: hidden;
+}
+/*皮肤样式使用*/
+.rootNav {
+    position: absolute;
+    height: 100%;
+    width: 450px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    /* [disabled]background-image: url("../../MirsImages/black.png"); */
+    background-repeat: no-repeat;
+    border-right: 1px solid #999999;
+    box-shadow: 3px 0px 5px rgba(150, 150, 150,0.4);
+}
+
+.rootNavScreen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    /* [disabled]background-image: url("../../MirsImages/black.png"); */
+    background-repeat: no-repeat;
+    border-right: 1px solid #999999;
+    box-shadow: 3px 0px 5px rgba(150, 150, 150,0.4);
+}
+
+.menuContainer {
+    position: absolute;
+    height: 100%;
+    width: 80px;
+}
+
+.sysManagerContainer {
+    background-position: center;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 8px;
+    left: 18px;
+    /* [disabled]border: 1px solid #999999; */
+    background-image: url("CommonImages/sys_white.png");
+    background-repeat: no-repeat;
+    /* [disabled]background-color: #cccccc; */
+    /* [disabled]border-radius: 5px; */
+    /* [disabled]filter: alpha(opacity=85); */ /*IE滤镜，透明度50%*/
+    /* [disabled]-moz-opacity: 0.85; */ /*Firefox私有，透明度50%
+				opacity: 0.85;*/
+}
+
+.mcFirstContainer {
+    position: absolute;
+    top: 62px;
+    left: 0px;
+    color: #ffffff;
+}
+
+.mcContainer {
+    position: relative;
+    font-size: 12px;
+    top: 0px;
+    left: 0px;
+    overflow: visible;
+}
+/*皮肤样式使用*/
+.mfContainer {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    font-size: 12px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+}
+
+.mfPic {
+    margin-left: 27px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.mfTitle {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+/*皮肤样式使用*/
+
+
+.mcContainerFixBar {
+    position: fixed;
+    width: 64px;
+    font-size: 12px;
+    bottom: 0px;
+    left: 0px;
+    overflow: visible;
+}
+
+.mOvnContainer {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    font-size: 12px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("CommonImages/more.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position-x:26px;
+    background-position-y:26px;
+  
+}
+
+    /*皮肤样式使用*/
+    .mOvnContainer:hover {
+    }
+
+.layoutContainer {
+    height: 48px;
+    width: 48px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    background-image: url("CommonImages/layout02.png");
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position: center;
+    cursor: pointer;
+}
+    /*皮肤样式使用*/
+    .layoutContainer:hover {
+    }
+
+.SettingMenuContainer {
+    height: 48px;
+    width: 48px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    background-image: url("CommonImages/installedD.png");
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position: center;
+    cursor: pointer;
+}
+    /*皮肤样式使用*/
+    .SettingMenuContainer:hover {
+    }
+
+.fixContainer {
+    height: 48px;
+    width: 48px;
+    margin-left: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.fixContainerImg {
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*固定工具栏按钮样式*/
+.fixBarButton {
+    position: relative;
+    top: 0px;
+    left: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+    .fixBarButton .fixBarButtonInfo {
+        height: 24px;
+        width: 24px;
+        background-color: #ff0000;
+        border-radius: 12px;
+        position: absolute;
+        top: 0px;
+        right: -2px;
+        text-align: center;
+        line-height: 22px;
+        border: 1px solid #666666;
+    }
+
+.subMenuContainer {
+    position: absolute;
+    top: 0px;
+    left: 81px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.searchContainer {
+    position: absolute;
+    height: 45px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-image: url('CommonImages/logo2.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 65px;
+    padding-top: 5px;
+}
+
+
+@media screen and (min-width:321px) and (max-width:480px) {
+	.searchContainer:before {
+		font-size: 13px;
+	}
+	
+	.searchContainer:after {
+		font-size: 6px;
+	}
+	
+	.searchContainer {
+		background-size: 28px 28px;
+		background-position: left center;
+		padding-left: 33px;
+		padding-top: 10px;
+	}
+}
+
+@media screen and (max-width:320px) {
+	.searchContainer:before {
+		font-size: 11px;
+	}
+	
+	.searchContainer:after {
+		font-size: 5px;
+	}
+	
+	.searchContainer {
+		background-size: 28px 28px;
+		background-position: left center;
+		padding-left: 33px;
+		padding-top: 10px;
+	}
+}
+
+.scInputContainer {
+    width: 75%;
+    height: 30px;
+    margin-top: 6px;
+    margin-left: 1px;
+    border-radius: 5px;
+    text-align: left;
+    text-indent: 4px;
+    background-color: #4f5a6c;
+    border: 1px solid #4f5a6c;
+    color: #ffffff;
+}
+
+.mcSecondContainer {
+    background-position: bottom;
+    position: absolute;
+    top: 46px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px; /*background-color:#f3f8fe;*/
+    color: #ffffff;
+    font-size: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    background-repeat: no-repeat;
+}
+
+.mnContainer {
+    border-bottom: 1px solid #e0e1e3;
+}
+
+.menuPic {
+    display: inline-block;
+    background-image: url("CommonImages/arrow-down.png");
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    margin-top: 6px;
+}
+
+.menuPicClose {
+    display: inline-block;
+    background-image: url("CommonImages/arrow-up.png");
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    margin-top: 6px;
+}
+
+.menuTitle {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+.funPic {
+    display: inline-block;
+    margin-left: 29px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+    .funPic img {
+        vertical-align: baseline;
+    }
+
+.funTitle {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 8px;
+    color: #333333;
+    padding-left: 4px;
+}
+/*皮肤样式使用*/
+.mnTwoBg {
+    height: 27px;
+    overflow: hidden;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+    cursor: pointer;
+}
+
+    .mnTwoBg .menuTitle {
+        color: #354052;
+    }
+
+.mnThreeBg {
+    height: 27px;
+    overflow: hidden;
+    padding-left: 4px;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+    cursor: pointer;
+}
+
+    .mnThreeBg .menuTitle {
+        color: #354052;
+    }
+
+.mnFourBg {
+    height: 27px;
+    overflow: hidden;
+    padding-left: 8px;
+    color: #354052;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+    cursor: pointer;
+}
+
+    .mnFourBg .menuPic {
+        color: #1983F9;
+    }
+
+.funBg {
+    height: 38px;
+    background-image: url('CommonImages/actionLeft2.png');
+    background-repeat: repeat-y;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+    cursor: pointer;
+}
+
+    .funBg:hover {
+        background-repeat: repeat-y;
+    }
+
+.menuFuncTran {
+    transition: height 0.2s;
+    transition-timing-function: linear;
+    /* Firefox 4 */
+    -moz-transition: height 0.2s;
+    -moz-transition-timing-function: linear;
+    /* Safari and Chrome */
+    -webkit-transition: height 0.2s;
+    -webkit-transition-timing-function: linear;
+    /* Opera */
+    -o-transition: height 0.2s;
+    -o-transition-timing-function: linear;
+}
+
+.mcFootContainer {
+    position: absolute;
+    height: 10px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #ff00f0;
+}
+
+.rootWork {
+    position: absolute;
+    top: 0px;
+    left: 451px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #FFFFFF;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.rootWorkScreen {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #FFFFFF;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.rwTitle {
+    background-position: 100% 50%;
+    position: absolute;
+    height: 45px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-repeat: no-repeat;
+}
+
+.rwTitleNone {
+    background-position: 99% 50%;
+    position: absolute;
+    height: 45px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #1983F9;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.rwShow {
+    float: left;
+    background-position: 10px 10px;
+    width: 64px;
+    height: 48px;
+    background-image: url('CommonImages/icon_06.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.rwFuncTitle {
+    margin-left: 65px;
+    margin-right: 10px;
+    text-align: right;
+    line-height: 44px;
+    height: 40px;
+    color: #f3f8fe;
+    font-size: 22px;
+}
+
+.rwContainer {
+    position: absolute;
+    width: 100%;
+    top: 46px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #eeeeee;
+}
+
+.rwContainerTop0 {
+    top: 0px;
+}
+
+.rwContainerIOS {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+.rwWorkIframe {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+.workLoading {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.5);
+    line-height: 20px;
+}
+
+.workLoaded {
+    display: none;
+}
+
+.rwIframeContainer {
+    position: absolute;
+}
+
+.rwIframeContainerShow {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.rwIfTitleContainer {
+    position: absolute;
+    height: 28px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.rwIfTitleContainerSel{
+    position: absolute;
+    height: 28px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.rwIfTitleContainerNone {
+    position: absolute;
+    height: 28px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #93d6ff;
+    display: none;
+}
+
+.rwIfTitleText {
+    position: absolute;
+    top: 2px;
+    left: 18px;
+}
+
+.rwIfTitleScreen {
+    background-position: center center;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 2px;
+    right: 50px;
+    background-image: url("CommonImages/扩大图标24px.png");
+    background-repeat: no-repeat;
+}
+
+.rwIfTitleClose {
+    background-position: center center;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 2px;
+    right: 12px;
+    background-image: url("CommonImages/关闭图标24px.png");
+    background-repeat: no-repeat;
+}
+
+.rwIfContainer {
+    position: absolute;
+    top: 28px;
+    bottom: 1px;
+    left: 0px;
+    right: 0px;
+    background-color: #999999;
+}
+
+.rwIfContainerTop0 {
+    top: 0px;
+}
+
+.rwIframeContainerTile {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+}
+
+.rwContainer iframe {
+    border: 0px;
+}
+
+/************************************* Mdi窗口样式 开始 *************************************************************/
+
+
+
+
+.navLContainer {
+    background-color: #1983F9;
+    width: 80px;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+    .navLContainer div {
+        position: absolute;
+        bottom: 30px;
+        width: 80px;
+        text-align: center;
+    }
+
+
+.popLContainer {
+    position: absolute;
+    bottom: 60px;
+    left: -16px;
+    width: 48px;
+    height: 48px;
+    z-index: 20;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.popRContainer {
+    float: left;
+    position: absolute;
+    bottom: 3px;
+    left: 0px;
+    padding: 3px;
+}
+
+.optionContainer {
+    width: 98%;
+    overflow-y: auto;
+    position: absolute;
+    top: 245px;
+    bottom: 3px;
+}
+
+.option {
+    width: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+.opTitle {
+    width: 70%;
+    padding-top: 10px;
+    padding-left: 5px;
+    float: left;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.opclose {
+    padding: 10px;
+    float: right;
+}
+
+.backBtn {
+    float: left;
+    width: 10%;
+    cursor: pointer;
+}
+
+    .backBtn img {
+        height: 26px;
+        width: 26px;
+    }
+
+.TopTitle {
+    height: 30px;
+}
+
+.FirstTitle {
+    float: left;
+    width: 80%;
+    text-align: center;
+    line-height: 27px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.editorBtn {
+    float: left;
+    width: 10%;
+    cursor: pointer;
+}
+
+.OptionFun {
+    padding: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+    .OptionFun img {
+        width: 20px;
+        float: right;
+        padding: 2px;
+    }
+
+.SecondTitle {
+    /*width: 100%;*/
+    text-align: center;
+    padding: 0px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.display {
+    display: none;
+}
+
+
+/*移动端*/
+@media screen and (max-width: 900px) {
+    .LayoutManagerContainer {
+        position: fixed;
+        bottom: 10px;
+        left: 95px;
+        right: 0;
+        height: 90%;
+        z-index: 99;
+    }
+
+    .popRContainer {
+        width: 90%;
+        height: 80%;
+        max-width: 280px;
+    }
+
+    .LayoutContainerBgCover {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.7);
+    }
+}
+/*PC端*/
+@media screen and (min-width: 901px) {
+    .LayoutManagerContainer {
+        position: fixed;
+        bottom: 10px;
+        left: 95px;
+        height: 90%;
+        z-index: 99;
+    }
+
+    .navRContainer {
+        background-color: #F3F8FE;
+        width: 360px;
+        height: 100%;
+        float: left;
+    }
+
+    .popRContainer {
+        width: 280px;
+        height: 80%;
+    }
+
+    .LayoutContainerBgCover {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 100%;
+        width: 450px;
+        background-color: rgba(0,0,0,0.7);
+    }
+}
+
+
+.mOvnNav {
+    height: 100%;
+    width: 80px;
+    background-color: #1983F9;
+}
+
+
+
+.mOvnPopimg {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    bottom: 40%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+
+
+.mOvnTopContainer {
+    position: relative;
+    height: 35px;
+}
+
+.mOvnBackBtn {
+    float: left;
+    width: 11%;
+    padding: 3px;
+    cursor: pointer;
+}
+
+    .mOvnBackBtn img {
+        height: 24px;
+        width: 24px;
+    }
+
+.mOvnTitle {
+    float: left;
+    width: 72%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.mOvnEditBtn {
+    float: left;
+    width: 11%;
+    padding: 3px;
+    cursor: pointer;
+}
+
+    .mOvnEditBtn img {
+        float: right;
+    }
+
+.mOvnOptionContainer {
+    position: absolute;
+    top: 35px;
+    bottom: 3px;
+    width: 98%;
+    overflow-y: auto;
+}
+
+    .mOvnOptionContainer li {
+        float: left;
+        width: 33.3%;
+    }
+
+.mOvnOption {
+    text-align: center;
+    float: left;
+    width: 33.3%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+    .mOvnOption:hover {
+        background-color: #248af8;
+    }
+
+.mOvnOptitle {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+
+
+/*移动端*/
+@media screen and (max-width: 900px) {
+    .mOvnPopContainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        bottom: 0px;
+        left: 80px;
+        z-index: 99;
+    }
+
+    .mOvnPopContainerBgCover {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .mOvnMainContainer {
+        width: 68%;
+        height: 70%;
+        padding: 3px;
+        position: absolute;
+        left: 15px;
+        bottom: 12px;
+        max-width: 280px;
+    }
+}
+/*PC端*/
+@media screen and (min-width: 901px) {
+    .mOvnPopContainer {
+        width: 280px;
+        height: 100%;
+        position: fixed;
+        bottom: 0px;
+        left: 80px;
+        z-index: 99;
+    }
+
+    .mOvnPopContainerBgCover {
+        width: 450px;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .mOvnMainContainer {
+        width: 280px;
+        height: 70%;
+        padding: 3px;
+        position: absolute;
+        left: 15px;
+        bottom: 12px;
+    }
+}
+/************************************* Mdi窗口样式 结束 *************************************************************/
+
+
+
+/************************************* 主题样式 开始 *************************************************************/
+.thmContainer {
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: -450px;
+    transition: left 0.3s;
+    -ms-transition: left 0.3s; /* IE 9 */
+    -moz-transition: left 0.3s; /* Firefox */
+    -webkit-transition: left 0.3s; /* Safari 和 Chrome */
+    -o-transition: left 0.3s; /* Opera */
+}
+
+.thmTopContainer {
+    height: 45px;
+    border-bottom: 1px solid #ffffff;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+}
+
+.thmBackContainer {
+    height: 46px;
+    width: 15%;
+    float: left;
+    line-height: 46px;
+    cursor: pointer;
+}
+
+    .thmBackContainer img {
+        margin-left: 20px;
+        margin-top: 9px;
+        height: 26px;
+    }
+
+.thmTopTitleContainer {
+    width: 70%;
+    height: 46px;
+    float: left;
+    text-align: center;
+    line-height: 46px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.thmMainContainer {
+    width: 96%;
+    margin-left: 2%;
+    position: absolute;
+    top: 47px;
+    bottom: 0px;
+    overflow-y: auto;
+}
+
+.thmItemBox {
+    position: relative;
+    background: #354052;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid #575757;
+}
+
+    .thmItemBox img {
+        max-width: 100%;
+    }
+
+.thmfirm_g {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.thmItemTitleBox {
+    width: 100%;
+    background-color: black;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    bottom: 10px;
+    opacity: 0.6;
+    display: none;
+}
+
+.thmItemText {
+    color: White;
+    /*width: 200px;*/
+    text-align: center;
+    margin: 0px auto;
+}
+
+.none {
+    display: none;
+}
+
+.thmConfirmContainer {
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    filter: alpha(opacity=70);
+    opacity: 0.8;
+    cursor: pointer;
+    /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+}
+
+.thmConfirmBox {
+    width: 140px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .thmConfirmBox img {
+        margin-top: 5px;
+    }
+
+.thmConfirmText {
+    height: 40px;
+    line-height: 40px;
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.thmRImgConContainer {
+    position: absolute;
+    width: 96%;
+    top: 30px;
+    left: 2%;
+}
+
+    .thmRImgConContainer img {
+        width: 100%;
+    }
+/************************************* 主题样式 结束 *************************************************************/
+
+
+/************************************* 扩展菜单 开始 *************************************************************/
+
+
+.msetBg {
+    background-color: rgba(0, 0, 0,0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.msetTopContainer {
+    height: 35px;
+}
+
+.msetBackBtn {
+    height: 27px;
+    float: left;
+    width: 10%;
+    cursor: pointer;
+    background-image: url('CommonImages/rtnBtn.png');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center;
+}
+
+.msetTitle {
+    float: left;
+    width: 80%;
+    text-align: center;
+    line-height: 27px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.msetEditBtn {
+    float: left;
+    width: 10%;
+    height: 32px;
+    cursor: pointer;
+    /*background-image: url('Images/编辑.png');*/
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: 30px 30px;
+}
+
+
+.msetItemsBar {
+    position: absolute;
+    top: 38px;
+    bottom: 3px;
+    right: 3px;
+    left: 3px;
+    overflow-y: auto;
+}
+
+.msetItemContainer {
+    text-align: center;
+    float: left;
+    width: 33.3%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+
+
+.msetItemTitle {
+    font-size: 12px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.msetItemIcon {
+    background-image: url('Images/水情监测.png');
+    height: 32px;
+    width: 32px;
+    margin: 0px auto;
+}
+
+.msetArrow {
+    position: absolute;
+    bottom: 120px;
+    left: -16px;
+    width: 48px;
+    height: 48px;
+    z-index: 20;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+/*移动端*/
+@media screen and (max-width: 900px) {
+    .msetRootContainer {
+        display: none;
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; /* Likely future */
+    }
+
+    .msetMainContainer {
+        width: 68%;
+        height: 70%;
+        position: absolute;
+        left: 95px;
+        bottom: 13px;
+        padding: 5px;
+        max-width: 280px;
+    }
+}
+/*PC端*/
+@media screen and (min-width: 901px) {
+    .msetRootContainer {
+        display: none;
+        position: fixed;
+        width: 450px;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        /*禁用文字选择 ie 之前版本请用 unselectable='on' 标签属性 */
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; /* Likely future */
+    }
+
+    .msetMainContainer {
+        width: 280px;
+        height: 70%;
+        position: absolute;
+        left: 95px;
+        bottom: 13px;
+        padding: 5px;
+    }
+}
+
+/************************************* 扩展菜单 结束 *************************************************************/
+/************************************* WinManagerBar工具条 开始 *************************************************************/
+.wmbRootContainer {
+    position: absolute;
+    height: 35px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid #d3d3d3;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.wmbFuncBar {
+    position: absolute;
+    left: 0;
+    right: 206px;
+    height: 100%;
+}
+
+.wmbRoolBar {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.wmbFuncBtn {
+    width: 40px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -moz-background-size: 24px;
+    -o-background-size: 24px;
+    -webkit-background-size: 24px;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+.wmbFuncBtn_Prev {
+    float: left;
+}
+
+.wmbFuncBtn_Next {
+    float: right;
+}
+
+.wmbFuncMainBar {
+    height: 100%;
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    overflow: hidden;
+}
+
+.wmbFuncItem {
+    float: left;
+    width: 135px;
+    height: 100%;
+    position: relative;
+}
+
+.wmbFuncOption {
+    height: 100%;
+    float: left;
+    position: absolute;
+    left: 1px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.wmbFuncTitleBar {
+    float: left;
+    width: 75%;
+    line-height: 35px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 18px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wmbFuncCloseBtn {
+    float: right;
+    width: 25%;
+    height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -moz-background-size: 12px;
+    -o-background-size: 12px;
+    -webkit-background-size: 12px;
+    background-size: 12px;
+}
+
+.wmbContralBar {
+    float: right;
+    height: 100%;
+    padding-right: 14px;
+}
+
+.wmbContralBtnBar {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 192px;
+}
+
+    .wmbContralBtnBar .wmbContralBtn {
+        float: left;
+        width: 48px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        -moz-background-size: 24px;
+        -o-background-size: 24px;
+        -webkit-background-size: 24px;
+        background-size: 24px;
+        cursor: pointer;
+    }
+
+.wmbSplitLine {
+    height: 60%;
+    width: 1px;
+    float: left;
+    position: relative;
+    top: 20%;
+    bottom: 20%;
+}
+/************************************* WinManagerBar工具条 结束 *************************************************************/
+
+
+
+/************************************* NavPanelControl *************************************************************/
+.npcNavPanelContainer {
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.npcClientPanelContainer {
+    /*display: none;*/
+}
+
+
+/************************************* NavPanelControl 结束*************************************************************/

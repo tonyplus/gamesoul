@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理</title>
+	#include_css(["bootstrap","validate","date","main"])
+	#include_html5()
+	
+</head>
+
+<body>
+<div class="container" style="padding-top:12px;">
+   <form name="userform" id="userform" class="form-horizontal">
+		    <input type="hidden"  id="userid" name="userid" value="$!{sysUser.userid}"/>
+			<input type="hidden"  id="password" name="password" value="$!{sysUser.password}"/>
+			<input type="hidden"  id="checkstates" name="checkstates" value="$!{sysUser.checkstates}"/>
+			<input type="hidden"  id="organid" name="organid" value="$!{sysUser.organid}"/>
+            <table class="zwTable">
+				<tr>
+					<td align="right"><label for="logacc">账号:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="username" name="username" value="$!{sysUser.username}"  maxlength="100" readonly></td>
+					<td align="right" ><label for="usr">用户名:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="nickname" name="nickname" value="$!{sysUser.nickname}" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="sex">性别:&nbsp;<font style="color:red">*</font></label></td>
+					<td><select id="sex" name="sex"  selectvalue="${sysUser.sex}" class="form-control text-center"></select>	</td>
+					<td align="right"><label for="birthday">出生年月:</label></td>
+					<td>
+						<input class="form-control" size="16" onclick="WdatePicker()" id="birthday" name="birthday" type="text" value="$!date.format('yyyy-MM-dd',$!sysUser.birthday)" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="phone">手机号:&nbsp;<font style="color:red">*</font></label></td>
+					<td><input type="text" class="form-control" id="phone" name="phone" value="$!{sysUser.phone}" maxlength="11"></td>
+					<td align="right"><label for="tel">办公电话:</label></td>
+					<td><input type="text" class="form-control" id="tel" name="tel" value="$!{sysUser.tel}" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="email">电子邮箱:</label></td>
+					<td><input type="text" class="form-control" id="email" name="email" value="$!{sysUser.email}" maxlength="18"></td>
+					<td align="right"><label for="idcard">身份证:</label></td>
+					<td><input type="text" class="form-control" id="idcard" name="idcard" value="$!{sysUser.idcard}" maxlength="50"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="address">家庭地址:</label></td>
+					<td><input type="text" class="form-control" id="address" name="address" value="$!{sysUser.address}" maxlength="30"></td>
+					<td align="right"><label for="hometel">家庭电话:</label></td>
+					<td><input type="text" class="form-control" id="hometel" name="hometel" value="$!{sysUser.hometel}" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="usertype">用户类型:&nbsp;<font style="color:red">*</font></label></td>
+					<td colspan="3"><select id="usertype" name="usertype"  selectvalue="${sysUser.usertype}" class="form-control text-center" disabled ></select>	</td>
+				</tr>
+                <tr>
+					<td align="right"><label for="note">备注:</label></td>
+					<td colspan="3"><textarea class="form-control" id="note" name="note" rows="3" maxlength="300">$!{sysUser.note}</textarea></td>
+				</tr>
+			</table>
+	
+
+			<div class="alginCenter">
+    		    <button type="submit" class="backBtn">保存</button>
+				#if(!$!{_accountPageFrm})
+                <button type="button"  class="backBtn" onclick="parent.closeWin('dialogModal')"><span>返回</span></button>
+				#end
+			</div>
+	  
+  </form>
+</div>
+#include_js(["jquery","bootstrap","validate","dateutil","select_option","datepicker"])
+<script src="${rc.contextPath}/js/module/system/sysuser/sysuserEdit.js"></script>
+</body>
+</html>

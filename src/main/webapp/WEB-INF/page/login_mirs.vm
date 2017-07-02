@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <title>#sys_title()</title>
+    <link href="${rc.contextPath}/css/mirslogin/LoginPlate.css" rel="stylesheet"/>
+	<style >
+		.trapezoid {
+			border-right: 30px solid transparent;
+            border-top: 40px solid #65d2f3;
+            height: 0;
+			position: relative;
+			color: #fff;
+		}
+		.trapezoid.active {
+		border-top: 40px solid #fe9800;
+		}
+		.trapezoid-1 {
+			height: 0;
+			border-bottom: 40px solid #65d2f3;
+			border-left: 30px solid transparent;
+			position: relative;
+			color: #fff;
+		}
+		.trapezoid-1.active {
+		border-bottom: 40px solid #fe9800;
+		}
+		.trapezoid span,.trapezoid-1 span {
+		position: absolute;
+		}
+		.with33 {
+		width: 25%;
+		float: left;
+		}
+		.trapezoid span {
+		top: -28px;
+		left: 12px;
+		}
+		.trapezoid-1 span {
+		top: 5px;
+		left: 6px;
+		}
+    </style>
+    <script>
+        window.onload = function () {
+            var speed = 15;
+            var speedA = 30;
+            SilhouetteB.innerHTML = SilhouetteC.innerHTML;
+            function Marquee() {
+                if (SilhouetteA.scrollLeft <= 0)
+                    SilhouetteA.scrollLeft += SilhouetteB.offsetWidth
+                else {
+                    SilhouetteA.scrollLeft--;
+                }
+            };
+            var MyMar = setInterval(Marquee, speed);
+
+
+            SilhouetteE.innerHTML = SilhouetteF.innerHTML;
+            function Marquee1() {
+                if (SilhouetteD.scrollLeft >= SilhouetteE.offsetWidth)
+                    SilhouetteD.scrollLeft -= SilhouetteE.offsetWidth;
+                else {
+                    SilhouetteD.scrollLeft++;
+                }
+            };
+            var MyMar1 = setInterval(Marquee1, speedA);
+        }
+
+        function UserRecord() {
+            var record = document.getElementById("UserRecord");
+            if (record.className == "lgRecordA") {
+                record.className = "lgRecordB";
+            } else {
+                record.className = "lgRecordA";
+            }
+        }
+
+        function LoginClick() {
+        	var username=$('#txtUserName').val();
+        	var password=$('#txtPassword').val();
+			var usertype = $('#tab').find('.active').attr("value");
+        	if(username.length==0||password.length==0){
+        		$('#msg').css('visibility','visible'); 
+        		return;
+        	}
+        	$.ajax( {    
+                url:'${rc.contextPath}/login/validate',    
+                data:{    
+                     username: username,    
+                     password : password,
+        			 usertype : usertype
+                },    
+                type:'post',    
+                cache:false,    
+                dataType:'json',    
+                success:function(data) {  
+                    if(data.success =="true" ){    
+                        window.location="${rc.contextPath}/";
+                    }else{    
+        			    $('#msg').html(data.msg);
+						$('#msg').css('visibility','visible');
+        				$('#txtPassword').val("");
+                    }    
+                 },    
+                 error : function() { 
+        		 	  $('#msg').html('用户名或密码不能为空！'); 
+                 }    
+              }); 
+        }
+    </script>
+
+</head>
+<body>
+    <div class="LoginContainer">
+        <div class="lgTopContainer">
+            <!--登录窗口A-账号密码框等-->
+            <div class="LoginBlock" id="LoginBlock">
+                <div class="LoginTop">
+                    <div class="LoginLogo">
+                        <img src="${rc.contextPath}/images/mirslogin/LogoMF.png" style="width: 100%; height: 100%;" />
+                    </div>
+                    <div class="LgoinWord">
+                        <div class="lgCompany">#sys_title()</div>
+                        <div class="lgEngName"></div>
+                    </div>
+                </div>
+                <div class="lgInputBox" id="lgInputBox">
+                    <div class="LoginBox" style="position: relative;">
+						#* <div>
+    						<label><input type="radio" id="usertype" name="usertype" value="GOV" checked /><font color="white">政府用户</font></label>
+							<label><input type="radio" id="usertype" name="usertype" value="ENT"/><font color="white">企业用户</font></label>
+						</div>*#
+                        <div class="LoginSrUser">
+                            <input type="text" placeholder="输入账号" class="lgInputUser" id="txtUserName" value="" />
+                        </div>
+                        <div class="LoginSrPassword">
+                            <input type="password" placeholder="输入密码" class="lgInputPassword" id="txtPassword" />
+                        </div>
+						<span id="msg" style="color:red;font-size: 12px; visibility:hidden;">用户名或密码不能为空！</span>
+						<div style="margin-top: 0px;">
+						<div id="tab" style="display:none;">
+                        <div style="position: absolute;left:0;width: 100%;"><strong id="usertype" name="usertype" value="GOV" class="trapezoid with33 active"><span>政府用户</span></strong></div>
+                        <div style="position: absolute;left: 28%;width: 100%;"><strong class="trapezoid-1 with33" id="usertype" name="usertype" value="ENT"><span>企业用户</span></strong></div>
+                        </div>
+                        <div style="position: absolute;left: 0;width: 100%;"><input type="button" class="LoginSrButton with33" style="margin-top: 0; width: 100%;" value="登录" onclick="LoginClick()" id="btnSubmit" /></div>
+                        </div>
+                    </div>
+                    <div class="LoginAuxiliary">
+                        <div class="lgRemenber">
+                            <div class="lgRecordA" onclick="UserRecord()" id="UserRecord"></div>
+                            <div class="lgmembers">记住用户名</div>
+                        </div>
+                        <div class="lgforget">忘记密码</div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <!--背景图片100%-->
+            <img src="${rc.contextPath}/images/mirslogin/bg.png" style="width: 100%; height: 100%;" />
+            <!--背景图片中矢量图形-->
+
+            <div>
+                <img src="${rc.contextPath}/images/mirslogin/PIC1.png" class="lgpic" />
+            </div>
+
+            <div class="lgSilhouetteBG">
+                <div class="lgSilhouetteA" id="SilhouetteA">
+                    <table align="left" cellpadding="0" cellspace="0" border="0">
+                        <tr>
+                            <td id="SilhouetteC" valign="top" nowrap="nowrap">
+                                <img src="${rc.contextPath}/images/mirslogin/flootA.png" class="lgSilhouetteEffect" />
+                                <img src="${rc.contextPath}/images/mirslogin/flootA.png" class="lgSilhouetteEffect" />
+                            </td>
+                            <td id="SilhouetteB" valign="top"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lgSilhouetteD" id="SilhouetteD">
+                    <table align="left" cellpadding="0" cellspace="0" border="0">
+                        <tr>
+                            <td id="SilhouetteF" valign="top" nowrap="nowrap">
+                                <img src="${rc.contextPath}/images/mirslogin/flootB.png" />
+                                <img src="${rc.contextPath}/images/mirslogin/flootB.png" />
+                            </td>
+                            <td id="SilhouetteE" valign="top"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--文字-->
+    <div class="lgStatement">
+        <div class="lgStatementInfo">
+			<span>#sys_company()</span>
+			<span>客服热线：#sys_company_tel()</span>
+		</div>
+    </div>
+	#include_js(["jquery","bootstrap","dialog","layer"])
+	<script type="text/javascript">
+$(function() {
+	//指定光标位置
+	$("input[id='txtUserName']:first").focus();
+	//document.getElementById("txtUserName").focus();
+	var lgnContent =$(window).height() - $('.lgnTop').height() - $('.foot').height()-19;
+	$('.lgnContent').css('height',lgnContent)
+	$(window).resize(function() {
+	var lgnContent =$(window).height() - $('.lgnTop').height() - $('.foot').height()-19;
+	$('.lgnContent').css('height',lgnContent)
+	});
+	$('.tab_menu ul li').click(function() {
+	$(this).addClass("selected").siblings().removeClass("selected");
+	var index =  $('.tab_menu ul li').index(this);
+	$("div.tab_box > div").eq(index).show().siblings().hide();
+	});
+	
+	var tab = document.getElementById('tab');
+	var str = tab.getElementsByTagName('strong');
+	for(var i = 0; i < str.length; i++) {
+		str[i].onclick = function() {
+		$('#tab').find('.active').removeClass('active');
+		 $(this).addClass('active');
+		}
+	}
+
+});
+//解决iframe session失效调整登陆界面
+if (window != top){
+   top.location.href = location.href; 
+} 
+
+//登录的时候回车键触发事件
+$(document).keydown(function(event) { 
+	if (event.keyCode == 13) { 
+		LoginClick()
+        event.returnValue = false;
+	} 
+}); 
+
+
+//注册
+function register(){
+	window.open("${rc.contextPath}/login/agreement"); 
+}
+/*
+*弹出待下载文件列表
+*/
+$("#operationManual").on("click",function(){
+	openWin("${rc.contextPath}/login/operationFileList",'操作文档','35%','55%');
+});
+</script>
+</body>
+</html>

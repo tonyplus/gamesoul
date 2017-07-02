@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安全管理综合信息系统</title>
+	#include_css(["bootstrap","font","jqgrid","jqueryui","ztree","main"])
+	#include_html5()
+	<style>
+		#gbox_grid-table, #gview_grid-table {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>	
+	 <div class="treecolor">
+        <div class="zTreeDemoBackground">
+            <ul id="privtree" class="ztree"></ul>
+        </div>
+    </div>
+	
+	<div class="pRight">
+		<div class="container-fluid pcheck margin10">
+        	<div class="row">
+        		<div class="col-sm-12">
+        			<form>
+						<input  type="hidden" name="privid" id="privid" value=""> 
+            			<input  type="hidden" name="usertype" id="usertype" value=""> 
+            			<input  type="hidden" name="privlevel" id="privlevel" value="">
+        				<div class="row">
+        					<div class="col-sm-2" style="padding:3px 20px;">
+								<input class="form-control formWidth" type="text"  name="privname" id="privname" placeholder="权限名称">
+        					</div>
+        					<div class="col-sm-2" style="padding:3px 20px;">
+        						<button type="button" class="search" id="searchBtn" style="width:100%;height:28px;">查询</button>
+        					</div>
+        					<div class="col-sm-2" style="padding:3px 20px;">
+        						<button type="button" class="search" id="resetBtn" style="width:100%;height:28px;">重置</button>
+        					</div>
+        				</div>
+        			</form>
+        		</div>
+        	</div>
+        </div>
+	
+		#*
+    	<div class="pcheck borderBtm margin10 sbox">
+    		<form class="form-inline  pd6">
+        		<div class="form-left">
+        			<input  type="hidden" name="privid" id="privid" value=""> 
+        			<input  type="hidden" name="usertype" id="usertype" value=""> 
+        			<input  type="hidden" name="privlevel" id="privlevel" value=""> 
+        
+            		<div class="col-in">
+        				<div class="lbl" >权限名称</div>
+        				<input class="form-control formWidth" type="text"  name="privname" id="privname"> 
+            		</div>
+            	    <div class="col-in">
+            			<button type="button" class="search" id="searchBtn">查询</button>
+            			<button type="button" class="search" id="resetBtn"><span>重置</span></button>		    	
+            	    </div>
+                </div>
+    		</form>
+    	</div>	
+		*#
+    	
+     	<div class="table-line">
+            #displayOper($privcode)			
+            <table id="grid-table"></table>
+            <div id="grid-pager"></div>
+    	</div>
+	</div>
+#include_js(["jquery","bootstrap","jqgrid","jqueryui","ztree","shrink","select_option"])
+<script src="${rc.contextPath}/js/module/system/syspriv/sysprivList.js"></script>
+</body>
+</html>
