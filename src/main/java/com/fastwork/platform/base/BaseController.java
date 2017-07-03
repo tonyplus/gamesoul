@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.fastwork.platform.utils.HtmlUtil;
 import com.github.miemiedev.mybatis.paginator.domain.Order;
 import com.github.miemiedev.mybatis.paginator.domain.Order.Direction;
@@ -39,6 +40,11 @@ public class BaseController {
     public static final String SUCCESS = "success";
 
     /**
+     * @Fields SUCCESS:TODO(返回码).
+     */
+    public static final String CODE = "code";
+    
+    /**
      * @Fields SUCCESS:TODO(消息).
      */
     public static final String MSG = "msg";
@@ -47,7 +53,7 @@ public class BaseController {
      * @Fields SUCCESS:TODO(消息).
      */
     public static final String DATA = "data";
-
+    
     /**
      * @Title:forword
      * @Description TODO(转发:服务器直接访问目标地址的URL[浏览器地址栏中还是原来的地址]).
@@ -299,5 +305,23 @@ public class BaseController {
      */
     public static int getEveryPage(int everyPage) {
         return everyPage == 0 ? 10 : everyPage;
+    }
+    
+    
+    /**
+     * 手机返回方法
+     * @param data
+     * @param code
+     * @param msg
+     * @return
+     */
+    public Map<String, Object> sendMobile(Object data,String code,String msg) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("code", code);
+        result.put(MSG, msg);
+        if(data!=null){
+        	result.put(DATA, JSONObject.toJSON(data));
+        }
+        return result;
     }
 }

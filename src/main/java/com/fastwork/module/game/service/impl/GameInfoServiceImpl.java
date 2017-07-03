@@ -7,6 +7,8 @@
  */
 package com.fastwork.module.game.service.impl;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +22,13 @@ import com.fastwork.module.game.service.GameInfoService;
 import com.fastwork.platform.base.BaseMapper;
 import com.fastwork.platform.base.BaseServiceImpl;
 import com.fastwork.platform.utils.FileUtil;
+import com.fastwork.platform.utils.UUIDGenerator;
 
  /**
- * @ClassName:SysAppVersionServiceImpl
+ * GameInfoServiceImpl
  * @Description:TODO(用一句话描述该文件做什么)
- * @date:2016年12月13日
- * @author lzqiang
+ * @date:2017年7月3日
+ * @author xufeng
  * @version 1.0
  * @since JDK 1.7
  */
@@ -51,23 +54,34 @@ public class GameInfoServiceImpl extends BaseServiceImpl<GameInfo> implements Ga
 	}
 
 
-	public void save(GameInfo gameInfo, MultipartFile appfile,HttpServletRequest request)
+	public void save(GameInfo gameInfo, MultipartFile img, MultipartFile file,HttpServletRequest request)
 			throws Exception {
-		if (appfile != null && !appfile.isEmpty()) {
-			String imageurl = FileUtil.getUploadPath("app", appfile); // 文件子路径
-			FileUtil.upload(request, imageurl, appfile); // 上传文件
-			gameInfo.setAppurl(imageurl);
+		gameInfo.setGameid(UUIDGenerator.generate());
+		if (img != null && !img.isEmpty()) {
+			String gameimg = FileUtil.getUploadPath("game", img); // 图片
+			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gameimg, img); // 上传图片
+			gameInfo.setGameimg(gameimg);
+		}
+		if (file != null && !file.isEmpty()) {
+			String gamefile = FileUtil.getUploadPath("game", file); // 文件
+			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gamefile, file); // 上传文件
+			gameInfo.setGamefile(gamefile);
 		}
 		super.saveBase(gameInfo);
 	}
 
 
-	public void update(GameInfo gameInfo, MultipartFile appfile,HttpServletRequest request)
+	public void update(GameInfo gameInfo, MultipartFile img, MultipartFile file,HttpServletRequest request)
 			throws Exception {
-		if (appfile != null && !appfile.isEmpty()) {
-			String imageurl = FileUtil.getUploadPath("app", appfile); // 文件子路径
-			FileUtil.upload(request, imageurl, appfile); // 上传文件
-			gameInfo.setAppurl(imageurl);
+		if (img != null && !img.isEmpty()) {
+			String gameimg = FileUtil.getUploadPath("game", img); // 图片
+			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gameimg, img); // 上传图片
+			gameInfo.setGameimg(gameimg);
+		}
+		if (file != null && !file.isEmpty()) {
+			String gamefile = FileUtil.getUploadPath("game", file); // 文件
+			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gamefile, file); // 上传文件
+			gameInfo.setGamefile(gamefile);
 		}
 		super.updateBase(gameInfo);
 	}

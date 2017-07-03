@@ -15,8 +15,8 @@ import com.fastwork.platform.base.BaseMapper;
  /**
  * GameInfoMapper
  * @Description:TODO(用一句话描述该文件做什么)
- * @date:2016年12月13日
- * @author lzqiang
+ * @date:2017年7月3日
+ * @author xufeng
  * @version 1.0
  * @since JDK 1.7
  */

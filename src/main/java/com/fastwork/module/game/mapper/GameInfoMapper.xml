@@ -3,21 +3,20 @@
 <mapper namespace="com.fastwork.module.game.dao.GameInfoMapper" > 
 <!-- Result Map-->
 <resultMap id="BaseResultMap" type="com.fastwork.module.game.entity.GameInfo" >
-	<result column="appid" property="appid" jdbcType="VARCHAR" />
-	<result column="appname" property="appname" jdbcType="VARCHAR" />
-	<result column="appversion" property="appversion" jdbcType="VARCHAR" />
-	<result column="appurl" property="appurl" jdbcType="VARCHAR" />
-	<result column="onlinetime" property="onlinetime" jdbcType="TIMESTAMP" />
+	<result column="gameid" property="gameid" jdbcType="VARCHAR" />
+	<result column="gamename" property="gamename" jdbcType="VARCHAR" />
+	<result column="gametype" property="gametype" jdbcType="CHAR" />
+	<result column="gameimg" property="gameimg" jdbcType="VARCHAR" />
+	<result column="gamedesc" property="gamedesc" jdbcType="VARCHAR" />
 	<result column="appdesc" property="appdesc" jdbcType="VARCHAR" />
-	<result column="isonline" property="isonline" jdbcType="CHAR" />
-	<result column="apptype" property="apptype" jdbcType="CHAR" />
-	<result column="note" property="note" jdbcType="VARCHAR" />
+	<result column="gamefile" property="gamefile" jdbcType="VARCHAR" />
+	<result column="downloadcount" property="downloadcount" jdbcType="INTEGER" />
 	<result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
 </resultMap>
        
 <!-- sys_app_version table all fields -->
 <sql id="Base_Column_List" >
-	 appid,appname,appversion,appurl,onlinetime,appdesc,isonline,apptype,note,updatetime
+	 gameid,gamename,gametype,gameimg,gamedesc,appdesc,gamefile,downloadcount,updatetime
 </sql>
 
  <!-- 分页查询 -->

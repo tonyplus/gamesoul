@@ -15,17 +15,17 @@ import com.fastwork.module.game.entity.GameInfo;
 import com.fastwork.platform.base.BaseService;
 
  /**
- * @ClassName:SysAppVersionService
+ * GameInfoService
  * @Description:TODO(用一句话描述该文件做什么)
- * @date:2016年12月13日
- * @author lzqiang
+ * @date:2017年7月3日
+ * @author xufeng
  * @version 1.0
  * @since JDK 1.7
  */
 public interface GameInfoService extends BaseService<GameInfo> {
 
-	public void save(GameInfo sysAppVersion, MultipartFile appfile,HttpServletRequest request) throws Exception;
+	public void save(GameInfo gameInfo,MultipartFile img,MultipartFile file,HttpServletRequest request) throws Exception;
 
-	public void update(GameInfo sysAppVersion, MultipartFile appfile,HttpServletRequest request) throws Exception;
+	public void update(GameInfo gameInfo,MultipartFile img,MultipartFile file,HttpServletRequest request) throws Exception;
 
 }
