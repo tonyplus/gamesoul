@@ -396,6 +396,8 @@ public class GameInfoController extends BaseController {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
 						String url = rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGamefile();
 						FileUtil.download(gameInfo.getGamename()+url.substring(url.lastIndexOf(".")),url, response);
+						gameInfo.setDownloadcount(gameInfo.getDownloadcount()+1);
+						gameInfoService.updateBase(gameInfo);
 					}
 				} catch (Exception e) {
 					LOG.error(e.getMessage(),e);

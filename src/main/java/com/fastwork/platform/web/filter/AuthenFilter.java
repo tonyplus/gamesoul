@@ -68,8 +68,7 @@ public class AuthenFilter extends OncePerRequestFilter {
 		setLogMDC(request);
 		// 不过滤的uri
 		String[] notFilter = { "/images/", "/js/", "/css/", "/fonts/",
-				"/login", "/mobile/", "/orgtree", "/loadDistrictSelect",
-				"login/succeed", "login/failure", "registsystem", "registsave"};
+				"/login", "/mobile/","login/succeed", "login/failure", "registsystem", "registsave"};
 
 		// 请求的uri
 		String uri = request.getRequestURI();
