@@ -21,22 +21,20 @@ USE `gamesoul`;
 DROP TABLE IF EXISTS `game_info`;
 
 CREATE TABLE `game_info` (
-  `appId` varchar(32) NOT NULL,
-  `appName` varchar(50) DEFAULT NULL,
-  `appVersion` varchar(32) DEFAULT NULL,
-  `appURL` varchar(50) DEFAULT NULL,
-  `onLineTime` datetime DEFAULT NULL,
-  `appDesc` varchar(1000) DEFAULT NULL,
-  `isOnLine` char(1) DEFAULT NULL,
-  `appType` char(1) DEFAULT NULL,
-  `note` varchar(1000) DEFAULT NULL,
-  `updatetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`appId`)
+  `gameid` varchar(32) NOT NULL COMMENT 'gameid',
+  `gamename` varchar(50) DEFAULT NULL COMMENT '游戏名称',
+  `gametype` char(2) DEFAULT NULL COMMENT '游戏类型 01.射击 02.动作 03.赛车 99.更多',
+  `gameimg` varchar(200) DEFAULT NULL COMMENT '游戏图片',
+  `gamedesc` varchar(500) DEFAULT NULL COMMENT '游戏描述',
+  `gamefile` varchar(200) DEFAULT NULL COMMENT '游戏文件',
+  `downloadcount` int(11) DEFAULT '0' COMMENT '下载次数',
+  `updatetime` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`gameid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `game_info` */
 
-insert  into `game_info`(`appId`,`appName`,`appVersion`,`appURL`,`onLineTime`,`appDesc`,`isOnLine`,`appType`,`note`,`updatetime`) values ('4028d8f25d03d9cd015d03deb432004a','3333333111','33','applogoMF_1499008513080.apk','2017-07-02 23:14:47','123','1','0','333','2017-07-02 23:15:22');
+insert  into `game_info`(`gameid`,`gamename`,`gametype`,`gameimg`,`gamedesc`,`gamefile`,`downloadcount`,`updatetime`) values ('4028d8f25d089d1e015d08bc975a056d','游戏世界','01','gameTIM图片20170702212804_1499090163546.png','33333333333','game新建文本文档 (4)_1499090239133.txt',1,'2017-07-03 21:57:19');
 
 /*Table structure for table `lk_role_priv` */
 

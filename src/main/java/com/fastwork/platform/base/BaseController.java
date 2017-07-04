@@ -55,6 +55,11 @@ public class BaseController {
     public static final String DATA = "data";
     
     /**
+     * @Fields SUCCESS:TODO(返回).
+     */
+    public static final String RESULT = "result";
+    
+    /**
      * @Title:forword
      * @Description TODO(转发:服务器直接访问目标地址的URL[浏览器地址栏中还是原来的地址]).
      * @date 2015年7月6日 下午2:02:23
@@ -320,7 +325,7 @@ public class BaseController {
         result.put("code", code);
         result.put(MSG, msg);
         if(data!=null){
-        	result.put(DATA, JSONObject.toJSON(data));
+        	result.put(RESULT, JSONObject.toJSON(data));
         }
         return result;
     }

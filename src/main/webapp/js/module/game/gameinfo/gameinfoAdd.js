@@ -1,49 +1,36 @@
 $(document).ready(function() {
-	showUploadFile("myfile",{allowedFileExtensions:['apk','ipa']},true);//显示文件上传控件
-	SelectOption.loadIsOnLine("isonline");//是否发布
-	SelectOption.loadAppType("apptype");//app类型
+	SelectOption.loadGameType("gametype");//游戏类型
+	showUploadFile('myimg','image');
+	showUploadFile("myfile",null,true);//显示文件上传控件
 	
-	$("#sysappversionform").validate({
+	
+	$("#gameInfoform").validate({
 		rules : {
-			appname : {
+			gamename : {
 				required : true
 			},
-			appversion : {
-				isFloatGtZero:true,
+			filemyfile : {
 				required : true
 			},
-			onlinetime:{
+			filemyimg : {
 				required : true
 			},
-			isonline:{
-				required : true
-			},
-			apptype : {
-				required : true
-			},
-			filemyfile:{
+			gametype : {
 				required : true
 			}
 		},
 		messages : {
-			appname : {
-				required : "app名称不能为空"
+			gamename : {
+				required : "游戏名不能为空"
 			},
-			appversion : {
-				isFloatGtZero:"版本必须是大于0的数字",
-				required : "app版本不能为空"
+			filemyfile : {
+				required : "请上传游戏包"
 			},
-			onlinetime : {
-				required : "发布时间不能为空"
+			filemyimg : {
+				required : "请上传游戏图片"
 			},
-			isonline : {
-				required : "是否发布没有选择"
-			},
-			apptype : {
-				required : "app类型没有选择"
-			},
-			filemyfile:{
-				required:"文件没上传"
+			gametype : {
+				required : "请选择游戏类型"
 			}
 		},
 		submitHandler : function(form) {
@@ -54,14 +41,18 @@ $(document).ready(function() {
 
 /** 保存 */
 function save() {
+	//var filemyimg=$("input[name='filemyimg']");
+	//alert($("input[name='filemyimg']"))
+	//var filemyfile=$("input[name='filemyfile']");
+	//var files=[$("input[name='filemyimg']"),$("input[name='filemyfile']")];
 	$.ajaxFileUpload({
 		type : 'post',
 		url : BASE_URL + '/game/gameinfo/save',
 		secureuri:false,
-	    files : $("input[name='filemyfile']"),
+	    files : [$("input[name='filemyimg']"),$("input[name='filemyfile']")],
 		cache : false,
 		dataType : 'json',
-		data : $("#sysappversionform").serializeArray(),
+		data : $("#gameInfoform").serializeArray(),
 		global : false,
 		success : function(json) {
 			if (json.success == true) {

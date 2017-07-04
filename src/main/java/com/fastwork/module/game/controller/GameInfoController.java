@@ -351,7 +351,7 @@ public class GameInfoController extends BaseController {
 				return sendMobile(results, ResultCode.SUCCESS,"数据获取成功");
 			} catch (Exception e) {
 				LOG.error(e.getMessage(),e);
-				return sendMobile(null, ResultCode.ERROR,"服务器异常");
+				return sendMobile(null, ResultCode.ERROR,"系统繁忙，请稍候再试");
 			}
 		}
 		
@@ -378,36 +378,6 @@ public class GameInfoController extends BaseController {
 			}
 		}
 		
-		/**
-		 * mobile验证图片是否存在
-		 * @param request
-		 * @param response
-		 * @param pageid
-		 */
-		@RequestMapping(value = "/mobile/download/img/{id}", method = RequestMethod.POST)
-		public Map<String, Object> mobiledownloadImgValidate(HttpServletRequest request,HttpServletResponse response, @PathVariable String id) {
-			if (!StringUtils.isEmpty(id)) {
-				try {
-					GameInfo gameInfo = gameInfoService.loadBaseById(id);
-					if (gameInfo != null) {
-						String rootPath = ResourceUtil.getUploadRootPath(request);
-						File file = new File(rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGameimg());
-						if(file.exists()){
-							return sendMobile(null, ResultCode.SUCCESS,"文件存在");
-						}else{
-							return sendMobile(null, ResultCode.NOFILE,"文件不存在");
-						}
-					}else{
-						return sendMobile(null, ResultCode.NOFILE,"文件不存在");
-					}
-				} catch (Exception e) {
-					LOG.error(e.getMessage(),e);
-					return sendMobile(null, ResultCode.ERROR,"服务器异常");
-				} 
-			}else{
-				return sendMobile(null, ResultCode.ERROR,"id不能为空");
-			}
-		}
 		
 		
 		/**
@@ -433,34 +403,4 @@ public class GameInfoController extends BaseController {
 			}
 		}
 		
-		/**
-		 * mobile验证游戏文件是否存在
-		 * @param request
-		 * @param response
-		 * @param pageid
-		 */
-		@RequestMapping(value = "/mobile/download/file/{id}", method = RequestMethod.POST)
-		public Map<String, Object> mobiledownloadValidate(HttpServletRequest request,HttpServletResponse response, @PathVariable String id) {
-			if (!StringUtils.isEmpty(id)) {
-				try {
-					GameInfo gameInfo = gameInfoService.loadBaseById(id);
-					if (gameInfo != null) {
-						String rootPath = ResourceUtil.getUploadRootPath(request);
-						File file = new File(rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGamefile());
-						if(file.exists()){
-							return sendMobile(null, ResultCode.SUCCESS,"文件存在");
-						}else{
-							return sendMobile(null, ResultCode.NOFILE,"文件不存在");
-						}
-					}else{
-						return sendMobile(null, ResultCode.NOFILE,"文件不存在");
-					}
-				} catch (Exception e) {
-					LOG.error(e.getMessage(),e);
-					return sendMobile(null, ResultCode.ERROR,"服务器异常");
-				} 
-			}else{
-				return sendMobile(null, ResultCode.ERROR,"id不能为空");
-			}
-		}
 }

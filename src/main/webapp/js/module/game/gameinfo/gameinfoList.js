@@ -1,32 +1,20 @@
 $(document).ready(function() {
-	SelectOption.loadAppType("apptype");//app类型
-	var colname = ['主键id','app名称','app版本','app下载路径','app类型 ','app描述','是否发布','发布时间','备注','更新时间', ]; 
+	SelectOption.loadGameType("gametype");//游戏类型
+	var colname = ['主键id','游戏类型 ','游戏名称','游戏介绍','下载次数','更新时间']; 
 	var colmodel = [
-					{name:'appid',index:'appid',hidden:true},
-					{name:'appname',index:'appname',
+					{name:'gameid',index:'gameid',hidden:true},
+					{name:'gamename',index:'gamename',
 						formatter:function(cellvalue, options, obj) { 
-							   return '<a href="javascript:void(0);" onclick="display(\''+obj.appid+'\')">'+obj.appname+'</a>';
+							   return '<a href="javascript:void(0);" onclick="display(\''+obj.gameid+'\')">'+obj.gamename+'</a>';
 						}
 					},
-					{name:'appversion',index:'appversion'},
-					{name:'appurl',index:'appurl'},
-					{name:'apptype',index:'apptype',
+					{name:'gametype',index:'gametype',
 						formatter:function(cellvalue, options, obj) { 
-							return SelectOption.getAppType(obj.apptype);
+							return SelectOption.getGameType(obj.gametype);
 						}
 					},
-					{name:'appdesc',index:'appdesc'},
-					{name:'isonline',index:'isonline',
-						formatter:function(cellvalue, options, obj) { 
-							return SelectOption.getIsOnLine(obj.isonline);
-						}
-					},
-					{name:'onlinetime',index:'onlinetime',
-						formatter:function(cellvalue, options, obj) { 
-							return getSmpFormatDateByLong(obj.onlinetime,true);
-						}
-					},
-					{name:'note',index:'note'},
+					{name:'gamedesc',index:'gamedesc'},
+					{name:'downloadcount',index:'downloadcount'},
 					{name:'updatetime',index:'updatetime',
 						formatter:function(cellvalue, options, obj) { 
 							return getSmpFormatDateByLong(obj.updatetime,true);
@@ -43,14 +31,14 @@ $(document).ready(function() {
     $("#grid-table").jqGrid({
     	height: tableHeight,
     	url : BASE_URL + "/game/gameinfo/list",
-		datatype: "json",
+    	datatype : "json",
 		cache : false,
-		mtype : 'post',
-		colNames:colname,
-		colModel:colmodel,
-		postData:{
-			appversion:$("#appversion").val(),
-			apptype:$("#apptype").val()
+		mtype : 'POST',
+		colNames : colname,
+		colModel : colmodel,
+		postData : {
+			gamename:$("#gamename").val(),
+			gametype:$("#gametype").val()
 		},
 		sortname : 'UPDATETIME',
 		sortorder : "desc",
@@ -67,7 +55,7 @@ $(document).ready(function() {
 		rowList:[10,20,30],
 		altRows: true,
 		multiselect: true,
-		caption: "app历史版本列表",
+		caption: "游戏信息列表",
 		autowidth: true
 	});
 });
@@ -76,8 +64,8 @@ $(document).ready(function() {
 function reloadGrid(){
 	$("#grid-table").jqGrid('setGridParam',{
 		page:1,postData:{
-			appversion:$("#appversion").val(),
-			apptype:$("#apptype").val()
+			gamename:$("#gamename").val(),
+			gametype:$("#gametype").val()
 		}
 	}).trigger("reloadGrid");
 }
@@ -89,9 +77,6 @@ $("#searchBtn").bind("click",function(){
 
 /*重置*/
 $("#resetBtn").bind("click",function(){
-//	$("#searchForm").each(function(){
-//		$(this).val("");
-//	})
 	 $(':input','#searchForm')
      .not(':button,:submit,:reset,:hidden') 
      .val('')
@@ -108,27 +93,27 @@ $("#addBtn").on("click", function () {
 $("#editBtn").on("click", function () {
 	var ids = getSingleIds();
 	var rowdata = $("#grid-table").jqGrid('getRowData',ids[0]); //选中的一条记录
-	var appid = rowdata.appid;
-	parent.openWin(BASE_URL+'/game/gameinfo/edit/'+appid,'编辑','65%','75%');
+	var gameid = rowdata.gameid;
+	parent.openWin(BASE_URL+'/game/gameinfo/edit/'+gameid,'编辑','65%','75%');
 });
 
 /*详细查询*/
-function display(appid){
-	parent.openWin(BASE_URL+"/game/gameinfo/display/"+appid,'详细','65%','75%');
+function display(gameid){
+	parent.openWin(BASE_URL+"/game/gameinfo/display/"+gameid,'详细','65%','75%');
 }
 /*批量删除*/
 $("#delBtn").on("click", function () {
 	//返回当前grid中复选框所选择的数据的id 
 	var ids = getManyIds("请选择需要删除的数据!");
-	var appids=[];
+	var gameids=[];
 	var state = "";
 	for(var i=0;i<ids.length;i++){
 		var id = ids[i]; 
 		//返回指定id行的数据 
 		var rowdatas = $("#grid-table").jqGrid('getRowData',id);
-		appids[i]= rowdatas.appid;
+		gameids[i]= rowdatas.gameid;
 	}
-	var parmJson = appids.toString();
+	var parmJson = gameids.toString();
 	var param = {"ids":parmJson};
 	del(param);
 });
