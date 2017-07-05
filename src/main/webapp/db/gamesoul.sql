@@ -16,6 +16,21 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`gamesoul` /*!40100 DEFAULT CHARACTER SE
 
 USE `gamesoul`;
 
+/*Table structure for table `adv_control` */
+
+DROP TABLE IF EXISTS `adv_control`;
+
+CREATE TABLE `adv_control` (
+  `advid` varchar(32) NOT NULL COMMENT '广告ID',
+  `advname` varchar(200) DEFAULT NULL COMMENT '广告名称',
+  `advfile` varchar(200) DEFAULT NULL COMMENT '广告文件',
+  `showflag` char(1) DEFAULT NULL COMMENT '广告标示(0.不显示 1.显示)',
+  `notes` varchar(500) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`advid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `adv_control` */
+
 /*Table structure for table `game_info` */
 
 DROP TABLE IF EXISTS `game_info`;
@@ -34,7 +49,7 @@ CREATE TABLE `game_info` (
 
 /*Data for the table `game_info` */
 
-insert  into `game_info`(`gameid`,`gamename`,`gametype`,`gameimg`,`gamedesc`,`gamefile`,`downloadcount`,`updatetime`) values ('4028d8f25d089d1e015d08bc975a056d','游戏世界','01','gameTIM图片20170702212804_1499090163546.png','33333333333','game新建文本文档 (4)_1499090239133.txt',1,'2017-07-03 21:57:19');
+insert  into `game_info`(`gameid`,`gamename`,`gametype`,`gameimg`,`gamedesc`,`gamefile`,`downloadcount`,`updatetime`) values ('4028d8f25d12f77d015d12f8247b0011','3333','02','game\\TIM图片20170702212804_1499261838460.png','啊啊','game\\gamesoul_1499261838504.sql',111,'2017-07-05 21:37:18'),('4028d8f25d12fbbf015d12ff46ba00ac','凤飞飞','02','game\\TIM图片20170702212804_1499262305978.png','1111111','game\\logoMF_1499262305982.apk',NULL,'2017-07-05 21:45:05');
 
 /*Table structure for table `lk_role_priv` */
 
@@ -49,7 +64,7 @@ CREATE TABLE `lk_role_priv` (
 
 /*Data for the table `lk_role_priv` */
 
-insert  into `lk_role_priv`(`conid`,`roleid`,`privid`) values ('1','1','1'),('2','1','101'),('3','1','101101'),('4','1','101102'),('5','1','101103'),('6','1','2'),('7','1','201'),('8','1','201101');
+insert  into `lk_role_priv`(`conid`,`roleid`,`privid`) values ('1','1','1'),('2','1','101'),('3','1','101101'),('4','1','101102'),('5','1','101103'),('6','1','2'),('7','1','201'),('8','1','201101'),('9','1','201102');
 
 /*Table structure for table `lk_user_role` */
 
@@ -86,7 +101,7 @@ CREATE TABLE `sys_priv` (
 
 /*Data for the table `sys_priv` */
 
-insert  into `sys_priv`(`privid`,`privname`,`privurl`,`privimg`,`parentid`,`ordernum`,`updatetime`,`notes`,`privlevel`,`privtype`) values ('1','系统管理','','xtgl','-1',1,NULL,NULL,'1','1'),('101','系统管理','/system/sysuser','xtgl','1',1,NULL,NULL,'2','1'),('101101','用户管理','/system/sysrole','xtyh','101',1,NULL,NULL,'3','1'),('101102','角色管理','/system/syspriv','xtjs','101',2,NULL,NULL,'3','1'),('101103','权限管理','/cms/cmsplatform','qxgl','101',3,NULL,NULL,'3','1'),('2','游戏管理','/system/sysuser','qyxx_max','-1',2,NULL,NULL,'1','1'),('201','游戏管理','/system/sysuser','qyxx_max','2',1,NULL,NULL,'2','1'),('201101','游戏信息','/game/gameinfo','appbb','201',2,NULL,NULL,'3','1');
+insert  into `sys_priv`(`privid`,`privname`,`privurl`,`privimg`,`parentid`,`ordernum`,`updatetime`,`notes`,`privlevel`,`privtype`) values ('1','系统管理','','xtgl','-1',1,NULL,NULL,'1','1'),('101','系统管理','/system/sysuser','xtgl','1',1,NULL,NULL,'2','1'),('101101','用户管理','/system/sysrole','xtyh','101',1,NULL,NULL,'3','1'),('101102','角色管理','/system/syspriv','xtjs','101',2,NULL,NULL,'3','1'),('101103','权限管理','/cms/cmsplatform','qxgl','101',3,NULL,NULL,'3','1'),('2','游戏管理','/system/sysuser','qyxx_max','-1',2,NULL,NULL,'1','1'),('201','游戏管理','/system/sysuser','qyxx_max','2',1,NULL,NULL,'2','1'),('201101','游戏信息','/game/gameinfo','appbb','201',1,NULL,NULL,'3','1'),('201102','广告控制','/game/advcontrol','gwgl','201',2,NULL,NULL,'3','1');
 
 /*Table structure for table `sys_role` */
 
