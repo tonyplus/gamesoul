@@ -101,7 +101,7 @@ public final class FileUtil {
             filename = names[0] + "_" + new Date().getTime() + "."
                     + names[names.length - 1];
         }
-        return secondPath + filename;
+        return secondPath +File.separator+ filename;
     }
 
     /**

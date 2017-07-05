@@ -19,7 +19,6 @@
 	<form id="gameInfoform" name="gameInfoform" class="form-horizontal" >	
 		<input type="hidden" id="token" name="token" value="$!{token}"/>
 		<input type="hidden" name="gameid" id="gameid" value="$!{gameInfo.gameid}"/>
-		<input type="hidden" name="gameimg" id="gameimg" value="$!{gameInfo.gameimg}"/>
 		<table class="zwTable">
 			<tr>
 				<td align="right"><label for="gamename">游戏名称:&nbsp;<font style="color:red">*</font></label></td>
@@ -29,7 +28,7 @@
                 <td align="right"><label for="attach">游戏图片:&nbsp;<font style="color:red">*</font></label></td>
 				<td colspan="3" id="imgattach">
 					<div class="fileafter">
-						<div id="myimg" filename="$!{gameInfo.gameimg}" fileurl="${rc.contextPath}/game/gameinfo/download/img/$!{gameInfo.gameid}"></div>
+						<div id="myimg" filename="$BaseTool.getFileName($!{gameInfo.gameimg})" fileurl="${rc.contextPath}/game/gameinfo/download/img/$!{gameInfo.gameid}"></div>
 					</div>
 				</td>
 			</tr>
@@ -43,10 +42,10 @@
 			</tr>
 			
 			<tr>
-                <td align="right"><label for="attach">游戏包:&nbsp;</label></td>
+                <td align="right"><label for="attach">游戏包:&nbsp;<font style="color:red">*</font></label></td>
 				<td colspan="3" id="fileattach">
 					<div class="fileafter">
-						<div id="myfile" filename="$!{gameInfo.gamename}" fileurl="${rc.contextPath}/game/gameinfo/download/file/$!{gameInfo.gameid}"></div>
+						<div id="myfile" filename="$BaseTool.getFileName($!{gameInfo.gamefile})" fileurl="${rc.contextPath}/game/gameinfo/download/file/$!{gameInfo.gameid}"></div>
 					</div>
 				</td>
 			</tr>

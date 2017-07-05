@@ -237,7 +237,7 @@ public class GameInfoController extends BaseController {
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
 					String url = rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGameimg();
-					FileUtil.download(gameInfo.getGamename()+url.substring(url.lastIndexOf(".")),url, response);
+					FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 				}
 			} catch (Exception e) {
 				LOG.error(e.getMessage(),e);
@@ -289,7 +289,7 @@ public class GameInfoController extends BaseController {
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
 					String url = rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGamefile();
-					FileUtil.download(gameInfo.getGamename()+url.substring(url.lastIndexOf(".")),url, response);
+					FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 				}
 			} catch (Exception e) {
 				LOG.error(e.getMessage(),e);
@@ -370,7 +370,7 @@ public class GameInfoController extends BaseController {
 					if (gameInfo != null) {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
 						String url = rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGameimg();
-						FileUtil.download(gameInfo.getGamename()+url.substring(url.lastIndexOf(".")),url, response);
+						FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 					}
 				} catch (Exception e) {
 					LOG.error(e.getMessage(),e);
@@ -395,7 +395,7 @@ public class GameInfoController extends BaseController {
 					if (gameInfo != null) {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
 						String url = rootPath+gameInfo.getGamename()+File.separator+gameInfo.getGamefile();
-						FileUtil.download(gameInfo.getGamename()+url.substring(url.lastIndexOf(".")),url, response);
+						FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 						gameInfo.setDownloadcount(gameInfo.getDownloadcount()+1);
 						gameInfoService.updateBase(gameInfo);
 					}

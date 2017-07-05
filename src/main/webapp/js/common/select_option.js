@@ -3,7 +3,7 @@ var SelectOption = function() {
 };
 
 /**
- * 复议诉讼状态
+ * 游戏类型
  * @return
  */
 SelectOption.getGameTypeData = function getGameTypeData() {
@@ -22,6 +22,23 @@ SelectOption.loadGameType = function loadGameType(code) {
 
 SelectOption.getGameType=function getGameType(code){
 	return SelectOption.getCodeName(SelectOption.getGameTypeData(),code);
+};
+
+
+/**
+ * 广告控制
+ * @return
+ */
+SelectOption.getAdvControlData = function getAdvControlData() {
+	var data=new Array();
+	data.push({code:'0',name:'不显示'});
+	data.push({code:'1',name:'显示'});
+	return data;
+};
+
+SelectOption.loadAdvControl = function loadAdvControl(code) {
+	var data=SelectOption.getAdvControlData();
+	SelectOption.loadBaseCode(data, code);
 };
 
 /************************************************* base start*******************************************************************************/

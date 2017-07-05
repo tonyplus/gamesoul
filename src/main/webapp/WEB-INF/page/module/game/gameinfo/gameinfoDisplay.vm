@@ -43,7 +43,7 @@
 			<tr>
                 <td align="right"><label for="attach">游戏包:&nbsp;</label></td>
 				<td colspan="3" id="tdattach">
-					<a href='javascript:void(0);' onclick=downloadFile('${rc.contextPath}/game/gameinfo/download/file/$!{gameInfo.gameid}') >$!{gameInfo.gamename}</a>
+					<a href='javascript:void(0);' onclick=downloadFile('${rc.contextPath}/game/gameinfo/download/file/$!{gameInfo.gameid}') >$BaseTool.getFileName($!{gameInfo.gamefile})</a>
 				</td>
 			</tr>
 			<tr>

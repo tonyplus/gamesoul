@@ -135,4 +135,17 @@ public class BaseTool {
     	}
 		return reString;
     }
+    
+    /**
+     * 获得文件名
+     * @param path
+     * @return
+     */
+    public String getFileName(String path){
+    	if(path!=null){
+    		return path.substring(path.lastIndexOf("\\")+1);
+    	}else{
+    		return "";
+    	}
+    }
 }
