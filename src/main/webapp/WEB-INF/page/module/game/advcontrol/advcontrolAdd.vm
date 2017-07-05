@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>广告信息添加</title>
+	#include_css(["bootstrap","font","jqgrid","jqueryui","layer","main","validate","date","fileinput"])
+	#include_html5()
+	<style >
+		.ui-jqgrid .ui-jqgrid-hbox {
+			height: auto;
+		}
+    </style>
+</head>
+
+<body>
+  <div class="container" style="padding-top:12px;">
+	<form id="advcontrolform" name="advControlform" class="form-horizontal" >	
+		<input type="hidden" id="token" name="token" value="$!{token}"/>
+		<input type="hidden" name="advid" id="advid" value="$!{advControl.advid}"/>
+		<table class="zwTable">
+			<tr>
+				<td align="right"><label for="advname">广告名称:&nbsp;<font style="color:red">*</font></label></td>
+				<td colspan="3"><input type="text" id="advname" name="advname" value="$!{advControl.advname}" class="form-control" maxlength="16"></td>
+			</tr>
+			<tr>
+				<td align="right"><label for="showflag">广告控制:&nbsp;<font style="color:red">*</font></label></td>
+				<td colspan="3">
+					<select id="showflag" name="showflag"  selectvalue="${advControl.showflag}" class="form-control text-center"></select>
+				</td>
+			</tr>
+			
+			<tr>
+                <td align="right"><label for="myfile">广告安装包:&nbsp;<font style="color:red">*</font></label></td>
+				<td colspan="3" id="fileattach">
+					<div class="fileafter">
+						<div id="myfile" filename="$BaseTool.getFileName($!{advControl.advfile})" fileurl="${rc.contextPath}/game/advcontrol/download/$!{advControl.advid}"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="notes">备注:&nbsp;</label></td>
+				<td colspan="3">
+					<textarea class="form-control" id="notes" name="notes" rows="3" maxlength="333">$!{advControl.notes}</textarea>
+				</td>
+            </tr>
+		</table>
+		<div class="alginCenter" style="margin-bottom:5px;">
+		    <button type="submit" class="backBtn">保存</button>
+    	</div>
+	</form>
+</div>
+
+#include_js(["jquery","bootstrap","validate","select_option","datepicker","ajaxfileupload","fileinput"])
+<script src="${rc.contextPath}/js/module/game/advcontrol/advcontrolAdd.js"></script>
+</body>
+</html>

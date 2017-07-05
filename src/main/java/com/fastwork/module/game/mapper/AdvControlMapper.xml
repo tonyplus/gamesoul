@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastwork.module.game.dao.AdvControlMapper" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="com.fastwork.module.game.entity.AdvControl" >
+	<result column="advid" property="advid" jdbcType="VARCHAR" />
+	<result column="advname" property="advname" jdbcType="VARCHAR" />
+	<result column="advfile" property="advfile" jdbcType="VARCHAR" />
+	<result column="showflag" property="showflag" jdbcType="CHAR" />
+	<result column="notes" property="notes" jdbcType="VARCHAR" />
+</resultMap>
+       
+<!-- sys_app_version table all fields -->
+<sql id="Base_Column_List" >
+	 advid,advname,advfile,showflag,notes
+</sql>
+  	
+</mapper>   
