@@ -133,7 +133,7 @@ public class AdvControlController extends BaseController {
 				AdvControl advControl = advControlService.loadBaseById(id);
 				if (advControl != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					String url = rootPath+File.separator+advControl.getAdvname()+File.separator+advControl.getAdvfile();
+					String url = rootPath+File.separator+advControl.getAdvfile();
 					FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 				}
 			} catch (Exception e) {
@@ -156,7 +156,7 @@ public class AdvControlController extends BaseController {
 				AdvControl advControl = advControlService.loadBaseById(id);
 				if (advControl != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					File file = new File(rootPath+File.separator+advControl.getAdvname()+File.separator+advControl.getAdvfile());
+					File file = new File(rootPath+File.separator+advControl.getAdvfile());
 					if(file.exists()){
 						sendSuccessMessage(response, "文件存在",false);
 					}else{
@@ -212,7 +212,7 @@ public class AdvControlController extends BaseController {
 					AdvControl advControl = advControlService.loadBaseById(id);
 					if (advControl != null) {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
-						String url = rootPath+File.separator+advControl.getAdvname()+File.separator+advControl.getAdvfile();
+						String url = rootPath+File.separator+advControl.getAdvfile();
 						FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 					}
 				} catch (Exception e) {

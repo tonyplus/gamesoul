@@ -57,8 +57,8 @@ public class AdvControlServiceImpl extends BaseServiceImpl<AdvControl> implement
 	public void save(AdvControl advControl, MultipartFile file,HttpServletRequest request)throws Exception {
 		if (file != null && !file.isEmpty()) {
 			advControl.setAdvid(UUIDGenerator.generate());
-			String advfile = FileUtil.getUploadPath("adv", file); // 文件
-			FileUtil.upload(request, advControl.getAdvname()+File.separator+advfile, file); // 上传文件
+			String advfile = FileUtil.getUploadPath("adv"+File.separator+advControl.getAdvname(), file); // 文件
+			FileUtil.upload(request, advfile, file); // 上传文件
 			advControl.setAdvfile(advfile);
 		}
 		super.saveBase(advControl);
@@ -67,8 +67,8 @@ public class AdvControlServiceImpl extends BaseServiceImpl<AdvControl> implement
 
 	public void update(AdvControl advControl, MultipartFile file,HttpServletRequest request)throws Exception {
 		if (file != null && !file.isEmpty()) {
-			String advfile = FileUtil.getUploadPath("adv", file); // 文件
-			FileUtil.upload(request, advControl.getAdvname()+File.separator+advfile, file); // 上传文件
+			String advfile = FileUtil.getUploadPath("adv"+File.separator+advControl.getAdvname(), file); // 文件
+			FileUtil.upload(request, advfile, file); // 上传文件
 			advControl.setAdvfile(advfile);
 		}
 		super.updateBase(advControl);

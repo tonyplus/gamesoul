@@ -58,13 +58,13 @@ public class GameInfoServiceImpl extends BaseServiceImpl<GameInfo> implements Ga
 			throws Exception {
 		gameInfo.setGameid(UUIDGenerator.generate());
 		if (img != null && !img.isEmpty()) {
-			String gameimg = FileUtil.getUploadPath("game", img); // 图片
-			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gameimg, img); // 上传图片
+			String gameimg = FileUtil.getUploadPath("game"+File.separator+gameInfo.getGamename(), img); // 图片
+			FileUtil.upload(request, gameimg, img); // 上传图片
 			gameInfo.setGameimg(gameimg);
 		}
 		if (file != null && !file.isEmpty()) {
-			String gamefile = FileUtil.getUploadPath("game", file); // 文件
-			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gamefile, file); // 上传文件
+			String gamefile = FileUtil.getUploadPath("game"+File.separator+gameInfo.getGamename(), file); // 文件
+			FileUtil.upload(request, gamefile, file); // 上传文件
 			gameInfo.setGamefile(gamefile);
 		}
 		super.saveBase(gameInfo);
@@ -74,13 +74,13 @@ public class GameInfoServiceImpl extends BaseServiceImpl<GameInfo> implements Ga
 	public void update(GameInfo gameInfo, MultipartFile img, MultipartFile file,HttpServletRequest request)
 			throws Exception {
 		if (img != null && !img.isEmpty()) {
-			String gameimg = FileUtil.getUploadPath("game", img); // 图片
-			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gameimg, img); // 上传图片
+			String gameimg = FileUtil.getUploadPath("game"+File.separator+gameInfo.getGamename(), img); // 图片
+			FileUtil.upload(request,gameimg, img); // 上传图片
 			gameInfo.setGameimg(gameimg);
 		}
 		if (file != null && !file.isEmpty()) {
-			String gamefile = FileUtil.getUploadPath("game", file); // 文件
-			FileUtil.upload(request, gameInfo.getGamename()+File.separator+gamefile, file); // 上传文件
+			String gamefile = FileUtil.getUploadPath("game"+File.separator+gameInfo.getGamename(), file); // 文件
+			FileUtil.upload(request, gamefile, file); // 上传文件
 			gameInfo.setGamefile(gamefile);
 		}
 		super.updateBase(gameInfo);
