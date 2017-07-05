@@ -120,7 +120,7 @@ public final class FileUtil {
      */
     public static void upload(HttpServletRequest request, String path,
             MultipartFile file) throws Exception {
-        String filePath = ResourceUtil.getUploadRootPath(request) + path;
+        String filePath = ResourceUtil.getUploadRootPath(request) +File.separator+ path;
         File dirPath = new File(filePath);
         if (!dirPath.exists()) {
             dirPath.mkdirs();
