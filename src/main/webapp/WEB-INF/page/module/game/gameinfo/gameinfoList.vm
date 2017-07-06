@@ -63,8 +63,8 @@
             <div class="tableTitle">
             	<div class="rgt" style="right:30px;">
             		<button class="liadd" id="addBtn">新增</button>
-					<button class="lidel" id="editBtn">编辑</button>
-					<button class="liedit" id="delBtn">删除</button>
+					<button class="liedit" id="editBtn">编辑</button>
+					<button class="lidel" id="delBtn">删除</button>
                 </div>
             </div>
         <table id="grid-table"></table>

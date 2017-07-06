@@ -19,6 +19,7 @@
 	<form id="advcontrolform" name="advControlform" class="form-horizontal" >	
 		<input type="hidden" id="token" name="token" value="$!{token}"/>
 		<input type="hidden" name="advid" id="advid" value="$!{advControl.advid}"/>
+		<input type="hidden" name="advfile" id="advfile" value="$!{advControl.advfile}"/>
 		<table class="zwTable">
 			<tr>
 				<td align="right"><label for="advname">广告名称:&nbsp;<font style="color:red">*</font></label></td>

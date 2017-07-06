@@ -19,6 +19,8 @@
 	<form id="gameInfoform" name="gameInfoform" class="form-horizontal" >	
 		<input type="hidden" id="token" name="token" value="$!{token}"/>
 		<input type="hidden" name="gameid" id="gameid" value="$!{gameInfo.gameid}"/>
+		<input type="hidden" name="gameimg" id="gameimg" value="$!{gameInfo.gameimg}"/>
+		<input type="hidden" name="gamefile" id="gamefile" value="$!{gameInfo.gamefile}"/>
 		<table class="zwTable">
 			<tr>
 				<td align="right"><label for="gamename">游戏名称:&nbsp;<font style="color:red">*</font></label></td>
