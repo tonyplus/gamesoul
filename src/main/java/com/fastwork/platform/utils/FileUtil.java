@@ -101,7 +101,7 @@ public final class FileUtil {
             filename = names[0] + "_" + new Date().getTime() + "."
                     + names[names.length - 1];
         }
-        return secondPath +File.separator+ filename;
+        return new String((secondPath +File.separatorChar+ filename).getBytes(),"utf-8");
     }
 
     /**
@@ -120,7 +120,7 @@ public final class FileUtil {
      */
     public static void upload(HttpServletRequest request, String path,
             MultipartFile file) throws Exception {
-        String filePath = ResourceUtil.getUploadRootPath(request) +File.separator+ path;
+        String filePath = ResourceUtil.getUploadRootPath(request) +File.separatorChar+ path;
         File dirPath = new File(filePath);
         if (!dirPath.exists()) {
             dirPath.mkdirs();

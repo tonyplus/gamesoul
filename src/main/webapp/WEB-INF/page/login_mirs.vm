@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
     <title>#sys_title()</title>
+	<link rel="Shortcut Icon" href="${rc.contextPath}/images/favicon.ico" />
     <link href="${rc.contextPath}/css/mirslogin/LoginPlate.css" rel="stylesheet"/>
 	<style >
 		.trapezoid {

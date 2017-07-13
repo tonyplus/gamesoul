@@ -283,8 +283,8 @@ public class LicenseUtil {
 	}
 
 	public static void main(String[] args) {
-        String str = createLicense("8e987965a2c070912572d6edb51ef11c") + "##"
-                + createDate(3);
+        String str = createLicense("221b61d2e4449935a201b900a5910258") + "##"
+                + createDate(1);
         str = new String(Base64.encodeBase64(str.getBytes()));
         System.out.println(str);
 	}

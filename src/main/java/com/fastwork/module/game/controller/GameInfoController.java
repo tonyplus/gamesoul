@@ -236,7 +236,7 @@ public class GameInfoController extends BaseController {
 				GameInfo gameInfo = gameInfoService.loadBaseById(id);
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					String url = rootPath+File.separator+gameInfo.getGameimg();
+					String url = rootPath+File.separatorChar+gameInfo.getGameimg();
 					FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 				}
 			} catch (Exception e) {
@@ -259,7 +259,7 @@ public class GameInfoController extends BaseController {
 				GameInfo gameInfo = gameInfoService.loadBaseById(id);
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					File file = new File(rootPath+File.separator+gameInfo.getGameimg());
+					File file = new File(rootPath+File.separatorChar+gameInfo.getGameimg());
 					if(file.exists()){
 						sendSuccessMessage(response, "文件存在",false);
 					}else{
@@ -288,7 +288,7 @@ public class GameInfoController extends BaseController {
 				GameInfo gameInfo = gameInfoService.loadBaseById(id);
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					String url = rootPath+File.separator+gameInfo.getGamefile();
+					String url = rootPath+File.separatorChar+gameInfo.getGamefile();
 					FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 				}
 			} catch (Exception e) {
@@ -311,7 +311,7 @@ public class GameInfoController extends BaseController {
 				GameInfo gameInfo = gameInfoService.loadBaseById(id);
 				if (gameInfo != null) {
 					String rootPath = ResourceUtil.getUploadRootPath(request);
-					File file = new File(rootPath+File.separator+gameInfo.getGamefile());
+					File file = new File(rootPath+File.separatorChar+gameInfo.getGamefile());
 					if(file.exists()){
 						sendSuccessMessage(response, "文件存在",false);
 					}else{
@@ -369,7 +369,7 @@ public class GameInfoController extends BaseController {
 					GameInfo gameInfo = gameInfoService.loadBaseById(id);
 					if (gameInfo != null) {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
-						String url = rootPath+File.separator+gameInfo.getGameimg();
+						String url = rootPath+File.separatorChar+gameInfo.getGameimg();
 						FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 					}
 				} catch (Exception e) {
@@ -394,7 +394,7 @@ public class GameInfoController extends BaseController {
 					GameInfo gameInfo = gameInfoService.loadBaseById(id);
 					if (gameInfo != null) {
 						String rootPath = ResourceUtil.getUploadRootPath(request);
-						String url = rootPath+File.separator+gameInfo.getGamefile();
+						String url = rootPath+File.separatorChar+gameInfo.getGamefile();
 						FileUtil.download(url.substring(url.lastIndexOf("\\")+1),url, response);
 						gameInfo.setDownloadcount(gameInfo.getDownloadcount()+1);
 						gameInfoService.updateBase(gameInfo);

@@ -67,7 +67,7 @@ public class BaseTool {
 	    	    					thirdmap.put("IsSingleton", true);
 	    	    					thirdmap.put("HelpUrl", "帮助地址");
 	    	    					thirdmap.put("MinVisible", 0);
-	    	    					thirdmap.put("OwnershipUnit", "上海中威研发中心");
+	    	    					thirdmap.put("OwnershipUnit", "游魂网咯研发中心");
 	    	    					//thirdmap.put("Icon", "images/文档/更新说明.png");
 	    	    					thirdmap.put("Icon", path+"/images/theme/blue/menu/"+sysPriv3.getPrivimg()+".png");
 	    	    					thirdmap.put("FontColor", "");

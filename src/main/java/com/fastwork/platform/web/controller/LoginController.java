@@ -30,6 +30,7 @@ import com.fastwork.platform.entity.Platform;
 import com.fastwork.platform.framework.Token;
 import com.fastwork.platform.utils.Encrypter;
 import com.fastwork.platform.utils.FileUtil;
+import com.fastwork.platform.utils.LicenseUtil;
 import com.fastwork.platform.utils.ResourceUtil;
 
 /**
@@ -102,12 +103,11 @@ public class LoginController extends BaseController {
 
         try {
 
-            /*
-             * boolean license = LicenseUtil.validateLicense(LicenseUtil
-             * .getLincese(request));// 验证license if (!license) {
-             * result.put("success", "false"); result.put("msg",
-             * "系统未授权，请联系管理员！"); return result; }
-             */
+             boolean license = LicenseUtil.validateLicense(LicenseUtil.getLincese(request));// 验证license 
+             if (!license) {
+            	 result.put("success", "false"); result.put("msg","系统未授权，请联系管理员！");
+            	 return result; 
+              }
 
             if (StringUtils.isNotBlank(username)
                     && StringUtils.isNotBlank(password)) {
